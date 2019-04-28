@@ -1,0 +1,8 @@
+name: Wands
+main: com.Wands.Main
+version: 0.1
+api-version: 1.13
+commands:
+   wands:
+      description: Wand command
+      usage: /<command>
