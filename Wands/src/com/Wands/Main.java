@@ -22,6 +22,7 @@ public class Main extends JavaPlugin {
 		new FireballWand(this, ChatColor.RED + "Fireball Wand", 1);
 		new IceWand(this, ChatColor.BLUE + "Ice Wand", 5);
 		new EarthWand(this, ChatColor.GRAY + "Earth Wand", 10);
+		new TeleportWand(this, ChatColor.LIGHT_PURPLE + "Teleport Wand", 15);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
