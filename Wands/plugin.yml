@@ -1,6 +1,6 @@
 name: Wands
 main: com.Wands.Main
-version: 0.1
+version: 1.0
 api-version: 1.13
 commands:
    wands:
