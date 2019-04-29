@@ -14,9 +14,3 @@ They are fueled with gunpowder, you just need to right click somewhere in the ai
 - **Ice Wand** *(5 Gunpowder)* Covers the nearby area in snow and slows every mob inside of it
 - **Earth Wand** *(10 Gunpowder)* Will cause a small earthquake launching mobs and blocks nearby into the air
 - **Teleport Wand** *(15 Gunpowder)* Teleports you into the direction you are looking
-
-### Version 1.0
-
-- Made wands drop after killing witches
-- Added fireball, ice, earth and teleport wands
-- Initial release
