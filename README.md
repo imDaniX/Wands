@@ -13,3 +13,4 @@ They are fueled with gunpowder, you just need to right click somewhere in the ai
 - **Fireball Wand** *(1 Gunpowder)* Shoots a fireball in the direction you are looking
 - **Ice Wand** *(5 Gunpowder)* Covers the nearby area in snow and slows every mob inside of it
 - **Earth Wand** *(10 Gunpowder)* Will cause a small earthquake launching mobs and blocks nearby into the air
+- **Teleport Wand** *(15 Gunpowder)* Teleports you into the direction you are looking
