@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.inventory.ItemStack;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -61,11 +62,11 @@ public class WandDropper implements Listener {
 				// Select random wand type
 				String type = wandVariationNames[rdm.nextInt(wandVariationNames.length)];
 				
-				// Give wand to player
-				InventoryManager.giveWandToPlayer(player, type);
+				// Create wand item
+				ItemStack wandItem = InventoryManager.createWandItem(player, type);
 				
-				// Notify player about wand
-				event.getDamager().sendMessage(ChatColor.DARK_PURPLE + "You found a wand while looting the witch");
+				// Drop wand item at witches death position
+				player.getWorld().dropItem(entity.getLocation(), wandItem);
 			}
 		}
 	}

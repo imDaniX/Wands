@@ -14,12 +14,12 @@ import net.md_5.bungee.api.ChatColor;
 
 public class InventoryManager {
 	
-	public static void giveWandToPlayer(Player player, String name) {
+	public static ItemStack createWandItem(Player player, String name) {
 		// Create stick
-		ItemStack wand = new ItemStack(Material.STICK, 1);
+		ItemStack wandItem = new ItemStack(Material.STICK, 1);
 		
 		// Get sticks meta data
-		ItemMeta wandMeta = wand.getItemMeta();
+		ItemMeta wandMeta = wandItem.getItemMeta();
 		
 		// Set stick name based on input
 		wandMeta.setDisplayName(name);
@@ -32,10 +32,10 @@ public class InventoryManager {
 		lore.add(ChatColor.GRAY + "Left click to use wand");
 		lore.add(ChatColor.GRAY + "Uses Gunpower as ammunition");
 		wandMeta.setLore(lore);
-		wand.setItemMeta(wandMeta);
+		wandItem.setItemMeta(wandMeta);
 		
-		// Give stick to player
-		player.getInventory().addItem(wand);
+		// Return the finished want item
+		return wandItem;
 	}
 	
 	public static boolean removeGunpowderFromPlayerInventory(Player player, int amount) {
