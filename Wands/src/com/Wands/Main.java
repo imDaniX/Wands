@@ -4,9 +4,24 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.Wands.WandVariations.*;
+
+import net.md_5.bungee.api.ChatColor;
+
 public class Main extends JavaPlugin {
+	
 	public void onEnable() {
-		new WandLogic(this);
+		// Initiate wand dropper
+		new WandDropper(this);
+		
+		// Initiate all the wand variations
+		initiateWands();
+	}
+	
+	void initiateWands() {
+		new FireballWand(this, ChatColor.RED + "Fireball Wand", 1);
+		new IceWand(this, ChatColor.BLUE + "Ice Wand", 5);
+		new EarthWand(this, ChatColor.GRAY + "Earth Wand", 10);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -14,4 +29,5 @@ public class Main extends JavaPlugin {
 		CommandHandler.handleCommand(sender, cmd, label, args);
 		return true;
 	}
+	
 }

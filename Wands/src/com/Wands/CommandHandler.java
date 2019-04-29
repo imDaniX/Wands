@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CommandHandler {
+	
 	public static void handleCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// Check if command sender is player
 		if (sender instanceof Player == false) {
@@ -12,8 +13,9 @@ public class CommandHandler {
 		}
 		
 		// Safe command player as sender
-		Player player = (Player) sender;
+		//Player player = (Player) sender;
 		
+		/*
 		if (label.equals("wands")) {
 			if (args.length == 2 && args[0].equals("give")) {
 				if (args[1].equals("fire_ball")) {
@@ -29,5 +31,7 @@ public class CommandHandler {
 				}
 			}
 		}
+		*/
 	}
+	
 }

@@ -6,13 +6,15 @@ import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import net.md_5.bungee.api.ChatColor;
 
 public class InventoryManager {
-	public static void giveWandToPlayer(Player player, WandTypes type) {
+	
+	public static void giveWandToPlayer(Player player, String name) {
 		// Create stick
 		ItemStack wand = new ItemStack(Material.STICK, 1);
 		
@@ -20,17 +22,7 @@ public class InventoryManager {
 		ItemMeta wandMeta = wand.getItemMeta();
 		
 		// Set stick name based on input
-		if (type == WandTypes.FIRE_BALL) {
-			wandMeta.setDisplayName(ChatColor.RED + "Fireball Wand");
-		}
-		
-		if (type == WandTypes.ICE) {
-			wandMeta.setDisplayName(ChatColor.BLUE + "Ice Wand");
-		}
-		
-		if (type == WandTypes.GROUND) {
-			wandMeta.setDisplayName(ChatColor.GRAY + "Earth Wand");
-		}
+		wandMeta.setDisplayName(name);
 		
 		// Add stick enchantment
 		wandMeta.addEnchant(Enchantment.KNOCKBACK, 1, true);
@@ -45,4 +37,32 @@ public class InventoryManager {
 		// Give stick to player
 		player.getInventory().addItem(wand);
 	}
+	
+	public static boolean removeGunpowderFromPlayerInventory(Player player, int amount) {
+		// Get player inventory
+		Inventory inventory = player.getInventory();
+		
+		// Loop through all items in player inventory
+		for (ItemStack item : inventory.getContents()) {
+			
+			// Check if item is gunpowder
+			if (item != null &&
+					item.getType() == Material.GUNPOWDER) {
+				
+				// Remove one if there is more than the needed amount
+				if (item.getAmount() > amount) {
+					item.setAmount(item.getAmount() - amount);
+					return true;
+				}
+				// Remove the whole stack if its exactly the needed amount
+				else if (item.getAmount() == amount) {
+					inventory.remove(item);
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
 }
