@@ -23,6 +23,11 @@ public class EarthWand extends Wand {
 
 	@Override
 	public void runAction(Player player) {
+		/*
+		 * Create a bukkit runnable
+		 * This will run repeatedly with different delays in order
+		 * to start launching blocks up in a nice pattern
+		 */
 		BukkitRunnable runnable = new BukkitRunnable() {
 
 			// Current range for earthquake
