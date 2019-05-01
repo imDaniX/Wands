@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -91,6 +92,9 @@ public class IceWand extends Wand {
 				livingEntity.addPotionEffect(slowness);
 			}
 		}
+		
+		// Play a sound effect
+		player.getWorld().playSound(playerLocation, Sound.BLOCK_SNOW_PLACE, 1, 1);
 	}
 
 }

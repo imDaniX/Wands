@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.LivingEntity;
@@ -39,6 +40,9 @@ public class EarthWand extends Wand {
 			@Override
 			public void run() {
 
+				// Play some sound effect for every row of blocks being launched
+				player.getWorld().playSound(playerLocation, Sound.ENTITY_ARROW_SHOOT, 1, 1);
+				
 				// Safe all the blocks that need to be launched into a list
 				List<Location> blocksToLaunch = new ArrayList<Location>();
 

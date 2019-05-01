@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -43,6 +44,9 @@ public class TeleportWand extends Wand {
 		
 		// Teleport player to the block thats farthest away from the player
 		player.teleport(teleportLocation);
+		
+		// Play a sound effect
+		player.getWorld().playSound(teleportLocation, Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
 	}
 
 }
