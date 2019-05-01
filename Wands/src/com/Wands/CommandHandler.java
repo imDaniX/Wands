@@ -35,6 +35,10 @@ public class CommandHandler {
 				if (args[1].equals("teleport")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.LIGHT_PURPLE + "Earth Wand");
 				}
+				
+				if (args[1].equals("summoners")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Summoners Wand");
+				}
 			}
 		}
 	}

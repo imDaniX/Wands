@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -51,19 +52,11 @@ public class EarthWand extends Wand {
 						for (int z = -earthquakeRange; z < earthquakeRange; z++) {
 
 							// Get block position
-							Location blockLocation = new Location(
-									playerLocation.getWorld(),
-									playerLocation.getX() + x,
-									playerLocation.getY() + y,
-									playerLocation.getZ() + z);
-
+							Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x, y, z));
+							
 							// Get position under block
-							Location blockCeilingLocation = new Location(
-									playerLocation.getWorld(),
-									playerLocation.getX() + x,
-									playerLocation.getY() + y + 1,
-									playerLocation.getZ() + z);
-
+							Location blockCeilingLocation = LocationHelper.offsetLocation(blockLocation, new Vector(0, 1, 0));
+							
 							// Check if block is in range and above the block there is air
 							if (blockLocation.distance(playerLocation) <= earthquakeRange + 0.5f
 									&& blockLocation.distance(playerLocation) >= earthquakeRange - 1
