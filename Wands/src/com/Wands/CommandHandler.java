@@ -43,6 +43,10 @@ public class CommandHandler {
 				if (args[1].equals("lightning")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Lightning Wand");
 				}
+				
+				if (args[1].equals("rocket")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.YELLOW + "Rocket Wand");
+				}
 			}
 		}
 	}
