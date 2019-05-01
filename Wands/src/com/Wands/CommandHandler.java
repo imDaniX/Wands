@@ -20,7 +20,7 @@ public class CommandHandler {
 		
 		if (label.equals("wands")) {
 			if (args.length == 2 && args[0].equals("give")) {
-				if (args[1].equals("fire_ball")) {
+				if (args[1].equals("fireball")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.RED + "Fireball Wand");
 				}
 				
@@ -46,6 +46,10 @@ public class CommandHandler {
 				
 				if (args[1].equals("rocket")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.YELLOW + "Rocket Wand");
+				}
+				
+				if (args[1].equals("craftsman")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_BLUE + "Craftsman Wand");
 				}
 			}
 		}

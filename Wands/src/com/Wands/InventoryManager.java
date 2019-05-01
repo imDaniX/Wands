@@ -64,6 +64,11 @@ public class InventoryManager {
 	}
 	
 	public static boolean removeGunpowderFromPlayerInventory(Player player, int amount) {
+		// If the wand doesnt have any action cost, dont check for gunpowder
+		if (amount == 0) {
+			return true;
+		}
+		
 		// Get player inventory
 		Inventory inventory = player.getInventory();
 		
