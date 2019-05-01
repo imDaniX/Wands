@@ -1,3 +1,8 @@
+# Version 1.0
+
+- Added a [Bukkit Page](https://dev.bukkit.org/projects/simple-wands)
+- Official release on Bukkit Dev
+
 # Version 0.2
 
 - Added sound effects for all wands
