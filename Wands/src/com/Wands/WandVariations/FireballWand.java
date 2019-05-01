@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -46,6 +47,9 @@ public class FireballWand extends Wand {
 							
 			// Spawn fireball
 			player.getWorld().spawnEntity(fireballLocation, EntityType.FIREBALL);
+			
+			// Player a sound effect
+			player.getWorld().playSound(fireballLocation, Sound.ITEM_FIRECHARGE_USE, 1, 1);
 		}
 	}
 	

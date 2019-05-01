@@ -64,7 +64,7 @@ public class WandDropper implements Listener {
 				String type = wandVariationNames[rdm.nextInt(wandVariationNames.length)];
 				
 				// Create wand item
-				ItemStack wandItem = InventoryManager.createWandItem(player, type);
+				ItemStack wandItem = InventoryManager.createWandItem(type);
 				
 				// Drop wand item at witches death position
 				player.getWorld().dropItem(entity.getLocation(), wandItem);

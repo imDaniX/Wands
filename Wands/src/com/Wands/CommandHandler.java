@@ -4,6 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import net.md_5.bungee.api.ChatColor;
+
 public class CommandHandler {
 	
 	public static void handleCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -13,25 +15,28 @@ public class CommandHandler {
 		}
 		
 		// Safe command player as sender
-		//Player player = (Player) sender;
+		Player player = (Player) sender;
 		
-		/*
+		
 		if (label.equals("wands")) {
 			if (args.length == 2 && args[0].equals("give")) {
 				if (args[1].equals("fire_ball")) {
-					InventoryManager.giveWandToPlayer(player, WandTypes.FIRE_BALL);
+					InventoryManager.giveWandToPlayer(player, ChatColor.RED + "Fireball Wand");
 				}
 				
 				if (args[1].equals("ice")) {
-					InventoryManager.giveWandToPlayer(player, WandTypes.ICE);
+					InventoryManager.giveWandToPlayer(player, ChatColor.BLUE + "Ice Wand");
 				}
 				
-				if (args[1].equals("ground")) {
-					InventoryManager.giveWandToPlayer(player, WandTypes.GROUND);
+				if (args[1].equals("earth")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.GRAY + "Earth Wand");
+				}
+				
+				if (args[1].equals("teleport")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.LIGHT_PURPLE + "Earth Wand");
 				}
 			}
 		}
-		*/
 	}
 	
 }

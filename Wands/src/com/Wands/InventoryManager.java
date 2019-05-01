@@ -14,7 +14,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class InventoryManager {
 	
-	public static ItemStack createWandItem(Player player, String name) {
+	public static ItemStack createWandItem(String name) {
 		// Create stick
 		ItemStack wandItem = new ItemStack(Material.STICK, 1);
 		
@@ -36,6 +36,31 @@ public class InventoryManager {
 		
 		// Return the finished want item
 		return wandItem;
+	}
+	
+	
+	public static void giveWandToPlayer(Player player, String name) {
+		// Create stick
+		ItemStack wandItem = new ItemStack(Material.STICK, 1);
+		
+		// Get sticks meta data
+		ItemMeta wandMeta = wandItem.getItemMeta();
+		
+		// Set stick name based on input
+		wandMeta.setDisplayName(name);
+		
+		// Add stick enchantment
+		wandMeta.addEnchant(Enchantment.KNOCKBACK, 1, true);
+		
+		// Set stick lore
+		List<String> lore = new ArrayList<String>();
+		lore.add(ChatColor.GRAY + "Left click to use wand");
+		lore.add(ChatColor.GRAY + "Uses Gunpower as ammunition");
+		wandMeta.setLore(lore);
+		wandItem.setItemMeta(wandMeta);
+		
+		// Give the item to the player
+		player.getInventory().addItem(wandItem);
 	}
 	
 	public static boolean removeGunpowderFromPlayerInventory(Player player, int amount) {
