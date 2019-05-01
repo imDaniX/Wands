@@ -17,9 +17,15 @@ public class CommandHandler {
 		// Safe command player as sender
 		Player player = (Player) sender;
 		
-		
 		if (label.equals("wands")) {
 			if (args.length == 2 && args[0].equals("give")) {
+				
+				// Check if the player has operator rights
+				if (!player.isOp()) {
+					player.sendMessage("Only operators can recieve wands over commands");
+					return;
+				}
+				
 				if (args[1].equals("fireball")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.RED + "Fireball Wand");
 				}
