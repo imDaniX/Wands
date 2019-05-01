@@ -24,6 +24,7 @@ public class Main extends JavaPlugin {
 		new EarthWand(this, ChatColor.GRAY + "Earth Wand", 10);
 		new TeleportWand(this, ChatColor.LIGHT_PURPLE + "Teleport Wand", 15);
 		new SummonersWand(this, ChatColor.RESET + "Summoners Wand", 30);
+		new LightningWand(this, ChatColor.RESET + "Lightning Wand", 20);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

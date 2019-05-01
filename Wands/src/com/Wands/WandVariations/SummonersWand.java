@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -31,6 +32,9 @@ public class SummonersWand extends Wand {
 
 	@Override
 	public void runAction(Player player) {
+		// Play a sound
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WOLF_GROWL, 1, 1);
+		
 		// Create a random number generator
 		Random rdm = new Random();
 		

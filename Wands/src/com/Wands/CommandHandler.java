@@ -39,6 +39,10 @@ public class CommandHandler {
 				if (args[1].equals("summoners")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Summoners Wand");
 				}
+				
+				if (args[1].equals("lightning")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Lightning Wand");
+				}
 			}
 		}
 	}
