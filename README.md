@@ -15,3 +15,4 @@ They are fueled with gunpowder, you just need to right click somewhere in the ai
 - **Earth Wand** *(10 Gunpowder)* Will cause a small earthquake launching mobs and blocks nearby into the air
 - **Teleport Wand** *(15 Gunpowder)* Teleports you into the direction you are looking
 - **Summoners Wand** *(30 Gunpowder)* Summons a random amount of wolfs that will attack nearby entities
+- **Lightning Wand** *(20 Gunpowder)* Strikes down lightning where you are aiming
