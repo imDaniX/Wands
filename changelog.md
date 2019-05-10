@@ -1,3 +1,8 @@
+# PREVIEW Version 1.1
+
+- Added particle effects to all wands
+- Add ```/wands free``` command
+
 # Version 1.0
 
 - Added a [Bukkit Page](https://dev.bukkit.org/projects/simple-wands)
