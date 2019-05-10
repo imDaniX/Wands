@@ -25,10 +25,11 @@ public class Main extends JavaPlugin {
 		new IceWand(this, ChatColor.BLUE + "Ice Wand", 5);
 		new EarthWand(this, ChatColor.GRAY + "Earth Wand", 10);
 		new TeleportWand(this, ChatColor.LIGHT_PURPLE + "Teleport Wand", 15);
-		new SummonersWand(this, ChatColor.RESET + "Summoners Wand", 30);
-		new LightningWand(this, ChatColor.RESET + "Lightning Wand", 20);
+		new SummonersWand(this, ChatColor.AQUA + "Summoners Wand", 30);
+		new LightningWand(this, ChatColor.DARK_BLUE + "Lightning Wand", 20);
 		new RocketWand(this, ChatColor.YELLOW + "Rocket Wand", 10);
-		new CraftingWand(this, ChatColor.DARK_BLUE + "Craftsman Wand", 0);
+		new CraftingWand(this, ChatColor.DARK_AQUA + "Craftsman Wand", 0);
+		new WoolWand(this, ChatColor.RESET + "Wool Wand", 5);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

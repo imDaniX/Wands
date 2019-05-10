@@ -45,11 +45,11 @@ public class CommandHandler {
 				}
 				
 				if (args[1].equals("summoners")) {
-					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Summoners Wand");
+					InventoryManager.giveWandToPlayer(player, ChatColor.AQUA + "Summoners Wand");
 				}
 				
 				if (args[1].equals("lightning")) {
-					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Lightning Wand");
+					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_BLUE + "Lightning Wand");
 				}
 				
 				if (args[1].equals("rocket")) {
@@ -57,7 +57,11 @@ public class CommandHandler {
 				}
 				
 				if (args[1].equals("craftsman")) {
-					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_BLUE + "Craftsman Wand");
+					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_AQUA + "Craftsman Wand");
+				}
+				
+				if (args[1].equals("wool")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Wool Wand");
 				}
 			}
 			

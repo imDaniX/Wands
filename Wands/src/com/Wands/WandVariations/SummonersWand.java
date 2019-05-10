@@ -22,11 +22,11 @@ import com.Wands.Wand;
 
 public class SummonersWand extends Wand {
 
-	int range = 5,
-		maximumWolfCount = 8,
-		minimumWolfCount = 3,
-		wolfRange = 10,
-		duration = 30;			// in seconds
+	int range = 5,				// range that the wolfs spawn (from the player)
+		maximumWolfCount = 8,	// how many wolfs spawn at max
+		minimumWolfCount = 3,	// how many wolfs spawn at least
+		wolfRange = 10,			// how far away wolfs target enemies
+		duration = 30;			// time of the wolfs existence in seconds
 	
 	public SummonersWand(Main main, String name, int cost) {
 		super(main, name, cost);
