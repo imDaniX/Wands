@@ -1,4 +1,4 @@
-# PREVIEW Version 1.1
+# [PREVIEW] Version 1.1
 
 - Added particle effects to all wands
 - Add ```/wands free``` command
