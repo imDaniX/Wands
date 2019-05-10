@@ -1,7 +1,9 @@
-# [PREVIEW] Version 1.1
+# Version 1.1
 
 - Added particle effects to all wands
 - Add ```/wands free``` command
+- Made summoners wand less likely to spawn wolfs inside of blocks
+- Increased the price of firball wand (1 -> 2)
 
 # Version 1.0
 

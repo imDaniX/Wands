@@ -21,7 +21,7 @@ public class Main extends JavaPlugin {
 	}
 	
 	void initiateWands() {
-		new FireballWand(this, ChatColor.RED + "Fireball Wand", 1);
+		new FireballWand(this, ChatColor.RED + "Fireball Wand", 2);
 		new IceWand(this, ChatColor.BLUE + "Ice Wand", 5);
 		new EarthWand(this, ChatColor.GRAY + "Earth Wand", 10);
 		new TeleportWand(this, ChatColor.LIGHT_PURPLE + "Teleport Wand", 15);
