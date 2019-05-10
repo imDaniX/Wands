@@ -42,7 +42,7 @@ public class LightningWand extends Wand {
 		Location lightningLocation = LocationHelper.offsetLocation(targetLocation, new Vector(0.5f, 1, 0.5f));
 		
 		// Play some sound effect to let the player know there's a thunder going down
-		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_IMPACT, 1f, 1);
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WITCH_AMBIENT, 0.5f, 1);
 		
 		// Play some sound effect at the position of the thunder to warn players
 		player.getWorld().playSound(lightningLocation, Sound.ENTITY_ENDERMAN_AMBIENT, 1, 1);
