@@ -7,11 +7,15 @@ import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
 
+import com.Wands.LocationHelper;
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class TeleportWand extends Wand {
@@ -41,6 +45,15 @@ public class TeleportWand extends Wand {
 				targetLocation.getZ() + 0.5f,
 				player.getLocation().getYaw(),
 				player.getLocation().getPitch());
+		
+		// Play some particles where the player was
+		ParticleEmitter.emitParticles(
+				LocationHelper.offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
+				Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
+		// Play some particles where the player went to
+		ParticleEmitter.emitParticles(
+				LocationHelper.offsetLocation(teleportLocation, new Vector(0, 1, 0)),
+				Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 		
 		// Teleport player to the block thats farthest away from the player
 		player.teleport(teleportLocation);

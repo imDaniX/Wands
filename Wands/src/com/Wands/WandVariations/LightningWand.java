@@ -7,12 +7,16 @@ import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 import com.Wands.LocationHelper;
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class LightningWand extends Wand {
@@ -37,8 +41,26 @@ public class LightningWand extends Wand {
 		// Use the target location but player rotation
 		Location lightningLocation = LocationHelper.offsetLocation(targetLocation, new Vector(0.5f, 1, 0.5f));
 		
-		// Strike down lightning at target location
-		player.getWorld().strikeLightning(lightningLocation);
+		// Play some sound effect to let the player know there's a thunder going down
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_IMPACT, 1f, 1);
+		
+		// Play some sound effect at the position of the thunder to warn players
+		player.getWorld().playSound(lightningLocation, Sound.ENTITY_ENDERMAN_AMBIENT, 1, 1);
+		
+		// Create a synchronous task
+		BukkitRunnable runnable = new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				
+				// Strike down lightning at target location
+				player.getWorld().strikeLightning(lightningLocation);
+			}
+		};
+		runnable.runTaskLater(main, 50);
+		
+		// Play some particle effect to let players now its coming
+		ParticleEmitter.emitParticles(lightningLocation, Particle.PORTAL, 500, 1, new Vector(0, 0, 0));
 	}
 
 }

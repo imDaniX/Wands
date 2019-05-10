@@ -10,6 +10,8 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin {
 	
+	public static boolean costEnabled = true;
+	
 	public void onEnable() {
 		// Initiate wand dropper
 		new WandDropper(this);

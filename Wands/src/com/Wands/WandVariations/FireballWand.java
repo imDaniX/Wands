@@ -7,12 +7,16 @@ import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
 
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class FireballWand extends Wand {
@@ -46,10 +50,13 @@ public class FireballWand extends Wand {
 					player.getLocation().getPitch());
 							
 			// Spawn fireball
-			player.getWorld().spawnEntity(fireballLocation, EntityType.FIREBALL);
+			Entity fireball = player.getWorld().spawnEntity(fireballLocation, EntityType.FIREBALL);
 			
 			// Player a sound effect
 			player.getWorld().playSound(fireballLocation, Sound.ITEM_FIRECHARGE_USE, 1, 1);
+			
+			// Play particle effects that follow the flame
+			ParticleEmitter.emitParticlesContinuously(fireball, Particle.FLAME, 5, 0.05, new Vector(0.5, 0.5, 0.5),  main, 0, 1, 200);
 		}
 	}
 	

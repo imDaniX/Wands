@@ -4,6 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.Wands.InventoryManager;
+
 import net.md_5.bungee.api.ChatColor;
 
 public class CommandHandler {
@@ -56,6 +58,17 @@ public class CommandHandler {
 				
 				if (args[1].equals("craftsman")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_BLUE + "Craftsman Wand");
+				}
+			}
+			
+			if (args.length == 1 && args[0].equals("free")) {
+				Main.costEnabled = !Main.costEnabled;
+				
+				if (Main.costEnabled) {
+					player.sendMessage("Wands will now cost gunpowder again");
+				}
+				else {
+					player.sendMessage("All wands are now free to use");
 				}
 			}
 		}

@@ -7,12 +7,14 @@ import java.util.Set;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class RocketWand extends Wand {
@@ -23,9 +25,6 @@ public class RocketWand extends Wand {
 
 	@Override
 	public void runAction(Player player) {
-		// Play a sound
-		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1, 1);
-		
 		// Get the player location
 		Location playerLocation = player.getLocation();
 		
@@ -49,6 +48,12 @@ public class RocketWand extends Wand {
 		
 			// Apply velocity to player
 			player.setVelocity(velocity.multiply(0.25f));
+			
+			// Play a sound
+			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1, 1);
+			
+			// Play some particles under player
+			ParticleEmitter.emitParticlesContinuously(player, Particle.FLAME, 1, 0.01, new Vector(0, 0, 0), main, 0, 1, 70);
 		}
 	}
 

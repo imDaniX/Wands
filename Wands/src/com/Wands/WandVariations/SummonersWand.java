@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -16,6 +17,7 @@ import org.bukkit.util.Vector;
 
 import com.Wands.LocationHelper;
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class SummonersWand extends Wand {
@@ -24,7 +26,7 @@ public class SummonersWand extends Wand {
 		maximumWolfCount = 8,
 		minimumWolfCount = 3,
 		wolfRange = 10,
-		duration = 30;
+		duration = 30;			// in seconds
 	
 	public SummonersWand(Main main, String name, int cost) {
 		super(main, name, cost);
@@ -50,11 +52,14 @@ public class SummonersWand extends Wand {
 			// Generate a random location for the wolf
 			Location spawnLocation = LocationHelper.getRandomNearbyPosition(player.getLocation(), range);
 			
-			// Offset spawn location so wolfs spawn in the center of the block
-			spawnLocation = LocationHelper.offsetLocation(spawnLocation, new Vector(0.5f, 1, 0.5f));
-			
 			// Spawn a wolf and safe it as a variable
 			Wolf wolf = (Wolf) player.getWorld().spawnEntity(spawnLocation, EntityType.WOLF);
+			
+			// Spawn cloud particles where the wolf spawns
+			ParticleEmitter.emitParticles(spawnLocation, Particle.CLOUD, 30, 0.01, new Vector(0.5, 0.5, 0.5));
+			
+			// Play particles at the position of the wolf
+			ParticleEmitter.emitParticlesContinuously(wolf, Particle.VILLAGER_ANGRY, 1, 1, new Vector(0, 0, 0), main, 0, 10, duration * 20);
 			
 			// Add wolf to list
 			wolfs.add(wolf);

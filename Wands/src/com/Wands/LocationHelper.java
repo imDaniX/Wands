@@ -46,7 +46,8 @@ public class LocationHelper {
 		Location validatedRandomLocation = null;
 
 		while (validatedRandomLocation == null
-				|| validatedRandomLocation.distance(startLocation) > range * 2) {
+				|| validatedRandomLocation.distance(startLocation) > range * 2
+				|| validatedRandomLocation.getBlock().getType().isSolid()) {
 
 			// Safe the random offset to a vector
 			Vector offset = new Vector(

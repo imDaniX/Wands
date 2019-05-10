@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -15,6 +16,7 @@ import org.bukkit.util.Vector;
 
 import com.Wands.LocationHelper;
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class IceWand extends Wand {
@@ -54,6 +56,9 @@ public class IceWand extends Wand {
 						// Place snow at that block position
 						blockLocation.getBlock().setType(Material.SNOW);
 
+						// Place snow effect over block
+						ParticleEmitter.emitParticlesContinuously(blockLocation, Particle.CLOUD, 1, 0.05, new Vector(1, 1, 1), main, rdm.nextInt(100), 100, 200);
+						
 						// Schedule task to turn snow blocks back to normal blocks
 						BukkitRunnable runnable = new BukkitRunnable() {
 							@Override
