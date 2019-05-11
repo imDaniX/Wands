@@ -18,3 +18,4 @@ They are fueled with gunpowder, you just need to right click somewhere in the ai
 - **Lightning Wand** *(20 Gunpowder)* Strikes down lightning where you are aiming
 - **Rocket Wand** *(10 Gunpowder)* Launches you in the direction you are looking
 - **Craftsman Wand** *(0 Gunpowder)* Opens a workbench
+- **Cloud Wand** *(5 Gunpowder)* Places blocks under you so you can walk in the clouds
