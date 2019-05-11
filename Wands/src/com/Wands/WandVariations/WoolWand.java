@@ -18,18 +18,18 @@ public class WoolWand extends Wand {
 	double	period = 0.25;		// how quickly to replace air blocks
 	int		range = 3;			// range in which air will be replaced by wool
 	
-	Material[] woolColors = new Material[] {
-		Material.BLUE_WOOL,
-		Material.CYAN_WOOL,
-		Material.LIGHT_BLUE_WOOL,
-		Material.LIME_WOOL,
-		Material.MAGENTA_WOOL,
-		Material.ORANGE_WOOL,
-		Material.PINK_WOOL,
-		Material.PURPLE_WOOL,
-		Material.RED_WOOL,
-		Material.WHITE_WOOL,
-		Material.YELLOW_WOOL
+	Material[] glassColors = new Material[] {
+		Material.BLUE_STAINED_GLASS,
+		Material.CYAN_STAINED_GLASS,
+		Material.LIGHT_BLUE_STAINED_GLASS,
+		Material.LIME_STAINED_GLASS,
+		Material.MAGENTA_STAINED_GLASS,
+		Material.ORANGE_STAINED_GLASS,
+		Material.PINK_STAINED_GLASS,
+		Material.PURPLE_STAINED_GLASS,
+		Material.RED_STAINED_GLASS,
+		Material.WHITE_STAINED_GLASS,
+		Material.YELLOW_STAINED_GLASS
 	};
 	
 	public WoolWand(Main main, String name, int cost) {
@@ -63,21 +63,21 @@ public class WoolWand extends Wand {
 							// Get location near player
 							Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x + 0.5f, -1, z + 0.5f));
 							
-							// Check if block can be placed at location
-							if (blockLocation.getBlock().getType() == Material.AIR
+							// Check if block can be placed at locationy
+							if (blockLocation.getBlock().getType().toString().contains("AIR")
 									&& blockLocation.distance(playerLocation) <= range) {
 								
-								Material woolColor = woolColors[rdm.nextInt(woolColors.length)];
+								Material glassColor = glassColors[rdm.nextInt(glassColors.length)];
 								
 								// Place block
-								blockLocation.getBlock().setType(woolColor);
+								blockLocation.getBlock().setType(glassColor);
 								
 								// Create runnable that will remove all the wool blocks
 								BukkitRunnable runnable = new BukkitRunnable() {
 									@Override
 									public void run() {
 										// Make sure the block we want to remove is still there
-										if (blockLocation.getBlock().getType() == woolColor
+										if (blockLocation.getBlock().getType() == glassColor
 												&& blockLocation.distance(player.getLocation()) >= 2) {		
 											
 											// Remove block

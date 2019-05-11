@@ -29,7 +29,7 @@ public class RocketWand extends Wand {
 		Location playerLocation = player.getLocation();
 		
 		// Set which blocks to ignore in following checks
-		Set<Material> ignoredBlocks = new HashSet<>(Arrays.asList(Material.AIR));
+		Set<Material> ignoredBlocks = new HashSet<>(Arrays.asList(Material.AIR, Material.CAVE_AIR));
 
 		// Get blocks in line of sight of player
 		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, 10);

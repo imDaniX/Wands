@@ -1,12 +1,11 @@
 package com.Wands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.Wands.WandVariations.*;
-
-import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin {
 	

@@ -29,7 +29,7 @@ public class TeleportWand extends Wand {
 	@Override
 	public void runAction(Player player) {
 		// Set which blocks to ignore in following checks
-		Set<Material> ignoredBlocks = new HashSet<>(Arrays.asList(Material.AIR));
+		Set<Material> ignoredBlocks = new HashSet<>(Arrays.asList(Material.AIR, Material.CAVE_AIR));
 					
 		// Get blocks in line of sight of player
 		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, teleportMaximumRange);

@@ -1,12 +1,11 @@
 package com.Wands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.Wands.InventoryManager;
-
-import net.md_5.bungee.api.ChatColor;
 
 public class CommandHandler {
 	
@@ -20,14 +19,14 @@ public class CommandHandler {
 		Player player = (Player) sender;
 		
 		if (label.equals("wands")) {
-			if (args.length == 2 && args[0].equals("give")) {
-				
-				// Check if the player has operator rights
-				if (!player.isOp()) {
-					player.sendMessage("Only operators can recieve wands over commands");
-					return;
-				}
-				
+			
+			// Check if the player has operator rights
+			if (!player.isOp()) {
+				player.sendMessage("Only operators can recieve wands over commands");
+				return;
+			}
+			
+			if (args.length == 2 && args[0].equals("give")) {				
 				if (args[1].equals("fireball")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.RED + "Fireball Wand");
 				}
