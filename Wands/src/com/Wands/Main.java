@@ -30,7 +30,7 @@ public class Main extends JavaPlugin {
 		new CraftingWand(this, ChatColor.DARK_AQUA + "Craftsman Wand", 0);
 		new WoolWand(this, ChatColor.RESET + "Cloud Wand", 8);
 		new TrickeryWand(this, ChatColor.DARK_GRAY + "Trickery Wand", 5);
-		new PumpkinWand(this, ChatColor.GOLD + "Pumpkin Wand", 8);
+		new PumpkinWand(this, ChatColor.GOLD + "Pumpkin Wand", 15);
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
