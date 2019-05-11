@@ -4,12 +4,14 @@ import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 import com.Wands.LocationHelper;
 import com.Wands.Main;
+import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class WoolWand extends Wand {
@@ -72,6 +74,9 @@ public class WoolWand extends Wand {
 								// Place block
 								blockLocation.getBlock().setType(glassColor);
 								
+								// Play particle effect at block position
+								ParticleEmitter.emitParticles(blockLocation, Particle.HEART, 1, 0.1, new Vector(0.5, 0.5, 0.5));
+								
 								// Create runnable that will remove all the wool blocks
 								BukkitRunnable runnable = new BukkitRunnable() {
 									@Override
@@ -82,6 +87,9 @@ public class WoolWand extends Wand {
 											
 											// Remove block
 											blockLocation.getBlock().setType(Material.AIR);
+											
+											// Play particle effect at block position
+											ParticleEmitter.emitParticles(blockLocation, Particle.CLOUD, 1, 0.01, new Vector(0.5, 0.5, 0.5));
 											
 											// Cancel this runnable
 											this.cancel();
