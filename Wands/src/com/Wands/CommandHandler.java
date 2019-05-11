@@ -59,8 +59,8 @@ public class CommandHandler {
 					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_AQUA + "Craftsman Wand");
 				}
 				
-				if (args[1].equals("wool")) {
-					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Wool Wand");
+				if (args[1].equals("cloud")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Cloud Wand");
 				}
 			}
 			

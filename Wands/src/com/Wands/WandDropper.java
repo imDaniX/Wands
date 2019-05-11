@@ -32,7 +32,7 @@ public class WandDropper implements Listener {
 					ChatColor.DARK_BLUE + 			"Lightning Wand",
 					ChatColor.YELLOW + 				"Rocket Wand",
 					ChatColor.DARK_AQUA + 			"Craftsman Wand",
-					ChatColor.RESET + 				"Wool Wand"
+					ChatColor.RESET + 				"Cloud Wand"
 			};
 	
 	@EventHandler
