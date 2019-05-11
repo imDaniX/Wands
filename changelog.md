@@ -1,6 +1,7 @@
 # Version 1.1
 
-- Added wool wand
+- Fixed bug that caused wands to not work in caves
+- Added cloud wand
 - Added particle effects to all wands
 - Added ```/wands free``` command
 - Made summoners wand less likely to spawn wolfs inside of blocks
