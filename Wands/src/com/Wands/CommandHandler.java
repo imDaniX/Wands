@@ -62,6 +62,10 @@ public class CommandHandler {
 				if (args[1].equals("cloud")) {
 					InventoryManager.giveWandToPlayer(player, ChatColor.RESET + "Cloud Wand");
 				}
+				
+				if (args[1].equals("trickery")) {
+					InventoryManager.giveWandToPlayer(player, ChatColor.DARK_GRAY + "Trickery Wand");
+				}
 			}
 			
 			if (args.length == 1 && args[0].equals("free")) {
