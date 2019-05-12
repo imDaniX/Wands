@@ -3,7 +3,7 @@
 - Fixed bug that caused wands to not work in caves
 - Added cloud, trickery and pumpkin wand
 - Added particle effects to all wands
-- Added ```/wands free``` command
+- Added ```/wands free``` command (OP only) that makes the use of wands stop taking gunpowder as fuel. This can be toggled
 - Made summoners wand less likely to spawn wolfs inside of blocks
 - Increased the price of fireball wand (1 -> 2)
 
