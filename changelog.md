@@ -1,5 +1,6 @@
 # Version 1.1
 
+- Fixed bug that caused wands to spawn incorrectly
 - Fixed bug that caused wands to not work in caves
 - Added cloud, trickery and pumpkin wand
 - Added particle effects to all wands
