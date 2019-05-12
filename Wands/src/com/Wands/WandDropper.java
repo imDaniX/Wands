@@ -24,17 +24,17 @@ public class WandDropper implements Listener {
 	
 	public String[] wandVariationNames = new String[] 
 			{
-					ChatColor.RED + 			"Fireball 		Wand",
-					ChatColor.BLUE + 			"Ice 			Wand",
-					ChatColor.GRAY + 			"Earth 			Wand",
-					ChatColor.LIGHT_PURPLE + 	"Teleport 		Wand",
-					ChatColor.AQUA + 			"Summoners 		Wand",
-					ChatColor.DARK_BLUE + 		"Lightning 		Wand",
-					ChatColor.YELLOW + 			"Rocket 		Wand",
-					ChatColor.DARK_AQUA + 		"Craftsman 		Wand",
-					ChatColor.RESET + 			"Cloud 			Wand",
-					ChatColor.DARK_GRAY +		"Trickery 		Wand",
-					 ChatColor.GOLD + 			"Pumpkin 		Wand"
+					ChatColor.RED + 			"Fireball Wand",
+					ChatColor.BLUE + 			"Ice Wand",
+					ChatColor.GRAY + 			"Earth Wand",
+					ChatColor.LIGHT_PURPLE + 	"Teleport Wand",
+					ChatColor.AQUA + 			"Summoners Wand",
+					ChatColor.DARK_BLUE + 		"Lightning Wand",
+					ChatColor.YELLOW + 			"Rocket Wand",
+					ChatColor.DARK_AQUA + 		"Craftsman Wand",
+					ChatColor.RESET + 			"Cloud Wand",
+					ChatColor.DARK_GRAY +		"Trickery Wand",
+					ChatColor.GOLD + 			"Pumpkin Wand"
 			};
 	
 	@EventHandler
