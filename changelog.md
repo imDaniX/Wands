@@ -1,3 +1,9 @@
+# Version 1.2
+
+- Fixed bug that caused ice wand to not work in caves
+- Removed ```/wands free``` command
+- Changed from a gunpowder based system to a cooldown based system. All wands will no be usable without the consumption of items. However they will need some time to recharge
+
 # Version 1.1
 
 - Fixed bug that caused wands to spawn incorrectly
