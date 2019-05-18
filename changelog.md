@@ -1,8 +1,9 @@
 # Version 1.2
 
 - Fixed bug that caused ice wand to not work in caves
+- Removed ```/wands give <name>``` command for now as it doesn't currently work
 - Removed ```/wands free``` command
-- Wands will now have colored names according to their level
+- Wands will now spawn in different rarity types (i.e. common, uncommon, ...) These will not effect the spawn rate of the wand but will rather function as a visual indicator of its power
 - Changed from a gunpowder based system to a cooldown based system. All wands will no be usable without the consumption of items. However they will need some time to recharge
 
 # Version 1.1
