@@ -1,7 +1,7 @@
 # Version 1.2
 
 - Fixed bug that caused ice wand to not work in caves
-- Fixed ```/wands give <name>``` to work with an improved way of spawning wands
+- Fixed ```/wands give <name>``` command to work with an improved way of spawning wands
 - Removed ```/wands free``` command
 - Updated wand descriptions
 - Wands will now spawn in different rarity types (i.e. common, uncommon, ...) These will not effect the spawn rate of the wand but will rather function as a visual indicator of its power
