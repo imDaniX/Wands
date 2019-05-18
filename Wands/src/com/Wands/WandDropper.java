@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 public class WandDropper implements Listener {
 	
 	Main main;
-	int dropChance = 100;
+	int dropChance = 10;
 	
 	WandDropper(Main main) {
 		main.getServer().getPluginManager().registerEvents(this, main);
