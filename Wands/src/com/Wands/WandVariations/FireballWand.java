@@ -21,8 +21,8 @@ import com.Wands.Wand;
 
 public class FireballWand extends Wand {
 
-	public FireballWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public FireballWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

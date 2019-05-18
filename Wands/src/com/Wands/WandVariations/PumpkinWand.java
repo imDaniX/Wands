@@ -28,8 +28,8 @@ public class PumpkinWand extends Wand {
 			duration = 30,		// duration of effect in seconds
 			range = 10;			// how far pumpkins can move away from player
 	
-	public PumpkinWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public PumpkinWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

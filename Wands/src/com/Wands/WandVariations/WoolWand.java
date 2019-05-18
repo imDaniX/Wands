@@ -34,8 +34,8 @@ public class WoolWand extends Wand {
 		Material.YELLOW_STAINED_GLASS
 	};
 	
-	public WoolWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public WoolWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

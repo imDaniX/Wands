@@ -18,8 +18,8 @@ public class TrickeryWand extends Wand {
 
 	int duration = 10;		// delay till teleport in seconds
 	
-	public TrickeryWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public TrickeryWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

@@ -22,8 +22,8 @@ public class TeleportWand extends Wand {
 
 	int teleportMaximumRange = 30;
 	
-	public TeleportWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public TeleportWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

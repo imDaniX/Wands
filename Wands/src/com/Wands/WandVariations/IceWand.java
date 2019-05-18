@@ -21,12 +21,13 @@ import com.Wands.Wand;
 
 public class IceWand extends Wand {
 
-	int range = 8,
-		duration = 10;
+	int range = 8,			// the range of the ice effect
+		duration = 10;		// the duration of the effect in seconds
 	
-	public IceWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public IceWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
+
 
 	@Override
 	public void runAction(Player player) {

@@ -19,8 +19,8 @@ import com.Wands.Wand;
 
 public class EarthWand extends Wand {
 
-	public EarthWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public EarthWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

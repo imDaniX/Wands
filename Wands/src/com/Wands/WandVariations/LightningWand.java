@@ -21,10 +21,10 @@ import com.Wands.Wand;
 
 public class LightningWand extends Wand {
 
-	int lightningMaximumRange = 50;
+	int lightningMaximumRange = 50;		// the maximum range of the lightning bolt
 	
-	public LightningWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public LightningWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

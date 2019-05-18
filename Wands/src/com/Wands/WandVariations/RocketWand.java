@@ -19,8 +19,8 @@ import com.Wands.Wand;
 
 public class RocketWand extends Wand {
 
-	public RocketWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public RocketWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override

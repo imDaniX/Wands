@@ -20,21 +20,28 @@ public class Main extends JavaPlugin {
 	}
 	
 	void initiateWands() {
-		new CraftingWand(this, 			ChatColor.DARK_AQUA + "Craftsman Wand", 	0);
 		
-		new FireballWand(this, 			ChatColor.RED + "Fireball Wand", 			5);
-		new TeleportWand(this, 			ChatColor.LIGHT_PURPLE + "Teleport Wand", 	5);
-		new RocketWand(this,			ChatColor.YELLOW + "Rocket Wand", 			5);
+		// Common
+		new CraftingWand(this, 		ChatColor.RESET + "Craftsman Wand",				"commond",		0);
 		
-		new TrickeryWand(this, 			ChatColor.DARK_GRAY + "Trickery Wand", 		20);
-		new IceWand(this, 				ChatColor.BLUE + "Ice Wand", 				20);
+		// Uncommon
+		new FireballWand(this, 		ChatColor.AQUA + "Fireball Wand", 				"uncommon",		5);
+		new TeleportWand(this, 		ChatColor.AQUA + "Teleport Wand", 				"uncommon",		5);
+		new RocketWand(this,		ChatColor.AQUA + "Rocket Wand", 				"uncommon",		5);
 		
-		new WoolWand(this, 				ChatColor.RESET + "Cloud Wand", 			30);
-		new PumpkinWand(this, 			ChatColor.GOLD + "Pumpkin Wand",			30);
-		new EarthWand(this, 			ChatColor.GRAY + "Earth Wand", 				30);
+		// Rare
+		new TrickeryWand(this, 		ChatColor.BLUE + "Trickery Wand", 				"rare",			20);
+		new IceWand(this, 			ChatColor.BLUE + "Ice Wand", 					"rare",			20);
 		
-		new SummonersWand(this, 		ChatColor.AQUA + "Summoners Wand", 			60);
-		new LightningWand(this, 		ChatColor.DARK_BLUE + "Lightning Wand", 	60);
+		// Legendary
+		new WoolWand(this, 			ChatColor.GOLD + "Cloud Wand", 					"legendary",	30);
+		new PumpkinWand(this, 		ChatColor.GOLD + "Pumpkin Wand",				"legendary",	30);
+		new EarthWand(this, 		ChatColor.GOLD + "Earth Wand", 					"legendary",	30);
+		
+		// Ancient
+		new SummonersWand(this, 	ChatColor.LIGHT_PURPLE + "Summoners Wand", 		"ancient",		60);
+		new LightningWand(this, 	ChatColor.LIGHT_PURPLE + "Lightning Wand", 		"ancient",		60);
+		
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

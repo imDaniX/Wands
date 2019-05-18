@@ -28,8 +28,8 @@ public class SummonersWand extends Wand {
 		wolfRange = 10,			// how far away wolfs target enemies
 		duration = 30;			// time of the wolfs existence in seconds
 	
-	public SummonersWand(Main main, String name, int cost) {
-		super(main, name, cost);
+	public SummonersWand(Main main, String name, String rarity, int cost) {
+		super(main, name, rarity, cost);
 	}
 
 	@Override
