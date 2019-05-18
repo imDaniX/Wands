@@ -24,9 +24,9 @@ You can left click to use a wand, however make sure you left click somewhere in 
 
 ### Legendary
 - **Cloud Wand** *(30 second cooldown)* Creates some temporary blocks under you so that you can walk through air
-- **Pumpkin Wand** *(30 second cooldown)* Spawns a bunch of flying pumpkins. These will confuse mobs and players by giving blindness and slowness effects as well as pushing the target in random directions
 - **Earth Wand** *(30 second cooldown)* Launches blocks and mobs nearby into the air dealing significant fall damager
 
 ### Ancient
 - **Summoners Wand** *(60 second cooldown)* Summons a few angry wolfs nearby targeting random mobs or players in their area
 - **Lightning Wand** *(60 second cooldown)* Strikes lightning at the position of the block you are looking at
+- **Pumpkin Wand** *(60 second cooldown)* Spawns a bunch of flying pumpkins. These will confuse mobs and players by giving blindness and slowness effects as well as pushing the target in random directions
