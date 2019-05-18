@@ -49,7 +49,7 @@ public class IceWand extends Wand {
 
 					// Check if block is of type air above a block of type ground
 					// aswell as if the block is in range
-					if (blockLocation.getBlock().getType() == Material.AIR
+					if (blockLocation.getBlock().getType().toString().contains("AIR")
 							&& blockGroundLocation.getBlock().getType().isSolid()
 							&& blockLocation.distance(playerLocation) <= range) {
 
