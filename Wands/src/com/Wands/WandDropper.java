@@ -2,7 +2,6 @@ package com.Wands;
 
 import java.util.Random;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -21,21 +20,6 @@ public class WandDropper implements Listener {
 		main.getServer().getPluginManager().registerEvents(this, main);
 		this.main = main;
 	}
-	
-	public String[] wandVariationNames = new String[] 
-			{
-					ChatColor.RED + 			"Fireball Wand",
-					ChatColor.BLUE + 			"Ice Wand",
-					ChatColor.GRAY + 			"Earth Wand",
-					ChatColor.LIGHT_PURPLE + 	"Teleport Wand",
-					ChatColor.AQUA + 			"Summoners Wand",
-					ChatColor.DARK_BLUE + 		"Lightning Wand",
-					ChatColor.YELLOW + 			"Rocket Wand",
-					ChatColor.DARK_AQUA + 		"Craftsman Wand",
-					ChatColor.RESET + 			"Cloud Wand",
-					ChatColor.DARK_GRAY +		"Trickery Wand",
-					ChatColor.GOLD + 			"Pumpkin Wand"
-			};
 	
 	@EventHandler
 	public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
@@ -71,11 +55,14 @@ public class WandDropper implements Listener {
 			// There is a certain % chance of a wand dropping after a witch died
 			if (chance <= dropChance) {
 				
+				// Randomly select a wand
+				int randomWandIndex = rdm.nextInt(Main.wandVariations.size());
+				
 				// Select random wand type
-				String type = wandVariationNames[rdm.nextInt(wandVariationNames.length)];
+				Wand randomWand = Main.wandVariations.get(randomWandIndex);
 				
 				// Create wand item
-				ItemStack wandItem = InventoryManager.createWandItem(type);
+				ItemStack wandItem = randomWand.createWandItem();
 				
 				// Drop wand item at witches death position
 				player.getWorld().dropItem(entity.getLocation(), wandItem);

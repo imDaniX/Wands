@@ -50,8 +50,8 @@ public abstract class Wand implements Listener {
 		
 		// Set stick lore
 		List<String> lore = new ArrayList<String>();
-		lore.add(ChatColor.GRAY + "Left click to use this " + rarity + " wand");
-		lore.add(ChatColor.GRAY + "This wand has a cooldown of " + cooldown + "seconds");
+		lore.add(ChatColor.GRAY + "Left click to use this " + rarity + ChatColor.GRAY + " wand");
+		lore.add(ChatColor.GRAY + "This wand has a cooldown of " + ChatColor.GREEN + cooldown + ChatColor.GRAY + " seconds");
 		wandMeta.setLore(lore);
 		wandItem.setItemMeta(wandMeta);
 		
