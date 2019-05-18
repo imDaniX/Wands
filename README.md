@@ -1,7 +1,7 @@
 # Wands
 Adds magic wands to your minecraft world
 
-*This plugin was made for Minecraft version 1.13.2, but should work on newer releases*
+*This plugin was made for Minecraft version 1.13.2, but should work on newer releases. If you encounter any problems please let me know*
 
 ## Description
 
