@@ -29,7 +29,6 @@ public class InventoryManager {
 		// Set stick lore
 		List<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.GRAY + "Left click to use wand");
-		lore.add(ChatColor.GRAY + "Uses Gunpower as ammunition");
 		wandMeta.setLore(lore);
 		wandItem.setItemMeta(wandMeta);
 		
