@@ -10,14 +10,23 @@ They are fueled with gunpowder, you just need to right click somewhere in the ai
 
 ## All current Wands
 
+### Common
 - **Crafting Wand** *(0 second cooldown)*
+
+### Uncommon
 - **Fireball Wand** *(5 second cooldown)*
 - **Teleport Wand** *(5 second cooldown)*
 - **Rocket Wand** *(5 second cooldown)*
+
+### Rare
 - **Trickery Wand** *(20 second cooldown)*
 - **Ice Wand** *(20 second cooldown)*
+
+### Legendary
 - **Wool Wand** *(30 second cooldown)*
 - **Pumpkin Wand** *(30 second cooldown)*
 - **Earth Wand** *(30 second cooldown)*
+
+### Ancient
 - **Summoners Wand** *(60 second cooldown)*
 - **Lightning Wand** *(60 second cooldown)*
