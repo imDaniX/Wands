@@ -10,13 +10,18 @@ They are fueled with gunpowder, you just need to right click somewhere in the ai
 
 ## All current Wands
 
-- **Fireball Wand** *(2 Gunpowder)* Shoots a fireball in the direction you are looking
-- **Ice Wand** *(5 Gunpowder)* Covers the nearby area in snow and slows every mob inside of it
-- **Earth Wand** *(10 Gunpowder)* Will cause a small earthquake launching mobs and blocks nearby into the air
-- **Teleport Wand** *(15 Gunpowder)* Teleports you into the direction you are looking
-- **Summoners Wand** *(30 Gunpowder)* Summons a random amount of wolfs that will attack nearby entities
-- **Lightning Wand** *(20 Gunpowder)* Strikes down lightning where you are aiming
-- **Rocket Wand** *(10 Gunpowder)* Launches you in the direction you are looking
-- **Craftsman Wand** *(0 Gunpowder)* Opens a workbench
-- **Cloud Wand** *(8 Gunpowder)* Places blocks under you so you can walk in the clouds
-- **Pumpkin Wand** *(15 Gunpowder)* Spawns a few flying Jack'O'Lanterns around you that will confuse nearby enemies
+- **Crafting Wand** *(0 second cooldown)*
+
+- **Fireball Wand** *(5 second cooldown)*
+- **Teleport Wand** *(5 second cooldown)*
+- **Rocket Wand** *(5 second cooldown)*
+
+- **Trickery Wand** *(20 second cooldown)*
+- **Ice Wand** *(20 second cooldown)*
+
+- **Wool Wand** *(30 second cooldown)*
+- **Pumpkin Wand** *(30 second cooldown)*
+- **Earth Wand** *(30 second cooldown)*
+
+- **Summoners Wand** *(60 second cooldown)*
+- **Lightning Wand** *(60 second cooldown)*
