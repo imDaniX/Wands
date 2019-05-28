@@ -26,12 +26,13 @@ public class Main extends JavaPlugin {
 	void initiateWands() {
 		
 		// Common
-		wandVariations.add(new CraftingWand(this, 	ChatColor.RESET + "Craftsman Wand",			ChatColor.RESET + "commond",			0));
+		wandVariations.add(new CraftingWand(this, 	ChatColor.RESET + "Craftsman Wand",			ChatColor.RESET + "common",				0));
 		
 		// Uncommon
 		wandVariations.add(new FireballWand(this, 	ChatColor.AQUA + "Fireball Wand", 			ChatColor.AQUA + "uncommon",			5));
 		wandVariations.add(new TeleportWand(this, 	ChatColor.AQUA + "Teleport Wand", 			ChatColor.AQUA + "uncommon",			5));
 		wandVariations.add(new RocketWand(this,		ChatColor.AQUA + "Rocket Wand", 			ChatColor.AQUA + "uncommon",			5));
+		wandVariations.add(new SlimeWand(this, 		ChatColor.AQUA + "Slime Wand", 				ChatColor.AQUA + "uncommon", 			5));
 		
 		// Rare
 		wandVariations.add(new TrickeryWand(this, 	ChatColor.BLUE + "Trickery Wand", 			ChatColor.BLUE + "rare",				20));
