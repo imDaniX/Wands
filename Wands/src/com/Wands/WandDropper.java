@@ -23,6 +23,7 @@ public class WandDropper implements Listener {
 	
 	@EventHandler
 	public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
+		
 		// Event damager has to be of type player
 		if (event.getDamager() instanceof Player == false) {
 			return;

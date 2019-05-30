@@ -45,7 +45,7 @@ public class Main extends JavaPlugin {
 		// Ancient
 		wandVariations.add(new SummonersWand(this, 	ChatColor.LIGHT_PURPLE + "Summoners Wand", 	ChatColor.LIGHT_PURPLE + "ancient",		60));
 		wandVariations.add(new LightningWand(this, 	ChatColor.LIGHT_PURPLE + "Lightning Wand", 	ChatColor.LIGHT_PURPLE + "ancient",		60));
-		wandVariations.add(new PumpkinWand(this, 	ChatColor.GOLD + "Pumpkin Wand",			ChatColor.LIGHT_PURPLE + "ancient",		60));
+		wandVariations.add(new PumpkinWand(this, 	ChatColor.LIGHT_PURPLE + "Pumpkin Wand",	ChatColor.LIGHT_PURPLE + "ancient",		60));
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

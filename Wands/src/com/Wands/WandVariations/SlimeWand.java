@@ -56,7 +56,7 @@ public class SlimeWand extends Wand {
 		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, 10);
 
 		// Only spawn fireball if there is some room infront of player
-		if (lineOfSightBlocks.size() >= 10) {
+		if (lineOfSightBlocks.size() >= 1) {
 
 			// Get a block in line of sight to know in which direction to launch the player
 			Location directionLocation = lineOfSightBlocks.get(lineOfSightBlocks.size() - 1).getLocation();
