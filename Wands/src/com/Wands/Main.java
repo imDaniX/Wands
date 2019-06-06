@@ -6,22 +6,42 @@ import java.util.List;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.Wands.WandVariations.*;
 
 public class Main extends JavaPlugin {
 	
-	public static double version = 1.2;
+	public static double version = 1.3;
 	public static boolean costEnabled = true;
 	public static List<Wand> wandVariations = new ArrayList<>();
+	public static FileConfiguration config;
 	
 	public void onEnable() {
-		// Initiate wand dropper
-		new WandDropper(this);
+		
+		// Load the config containing plugin settings
+		loadConfig();
 		
 		// Initiate all the wand variations
 		initiateWands();
+		
+		// Initiate wand dropper
+		new WandDropper(this);
+	}
+	
+	void loadConfig() {
+		
+		// Get the config
+		config = this.getConfig();
+		
+		// Set some default settings
+		config.addDefault("Wands.Drop.Enabled", true);
+		config.addDefault("Wands.Drop.Chance", 10);
+		
+		// Save all the settings to the config
+		config.options().copyDefaults(true);
+		this.saveConfig();
 	}
 	
 	void initiateWands() {

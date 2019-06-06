@@ -14,11 +14,14 @@ import org.bukkit.inventory.ItemStack;
 public class WandDropper implements Listener {
 	
 	Main main;
-	int dropChance = 10;
+	int dropChance;
 	
 	WandDropper(Main main) {
 		main.getServer().getPluginManager().registerEvents(this, main);
 		this.main = main;
+		
+		// Read the drop chance from the config
+		dropChance = Main.config.getInt("Wands.Drop.Chance");
 	}
 	
 	@EventHandler
@@ -26,6 +29,11 @@ public class WandDropper implements Listener {
 		
 		// Event damager has to be of type player
 		if (event.getDamager() instanceof Player == false) {
+			return;
+		}
+		
+		// Don't check anything if the user doesn't want wands to spawn
+		if (!Main.config.getBoolean("Wands.Drop.Enabled")) {
 			return;
 		}
 		
