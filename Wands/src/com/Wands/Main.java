@@ -12,6 +12,7 @@ import com.Wands.WandVariations.*;
 
 public class Main extends JavaPlugin {
 	
+	public static double version = 1.2;
 	public static boolean costEnabled = true;
 	public static List<Wand> wandVariations = new ArrayList<>();
 	

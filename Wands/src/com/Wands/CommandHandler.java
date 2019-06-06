@@ -24,6 +24,21 @@ public class CommandHandler {
 				return;
 			}
 			
+			if (args.length == 0) {
+				player.sendMessage("Wands v" + Main.version + " by 'pyzn'. Use /wands help to get a list of commands");
+			}
+			
+			if (args.length == 1 && args[0].equals("help")) {
+				
+				// Display a list of all commands for the player
+				player.sendMessage("Here is a list of all valid wands commands:\n"
+						+ "/wands help\n"
+						+ "/wands give <name>");
+				
+				// Return so later commands aren't executed
+				return;
+			}
+			
 			if (args.length == 2 && args[0].equals("give")) {		
 				
 				// Loop through all possible 
@@ -41,11 +56,13 @@ public class CommandHandler {
 						// Notify the player
 						player.sendMessage("You have recieved a " + wand.name);
 						
-						// Return the function
+						// Return so later commands aren't executed
 						return;
 					}
 				}
 			}
+			
+			player.sendMessage("Invalid command usage. Use /wands help to get a list of commands");
 		}
 	}
 	
