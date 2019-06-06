@@ -18,14 +18,11 @@ public class CommandHandler {
 		
 		if (label.equals("wands")) {
 			
-			// Check if the player has operator rights
-			if (!player.isOp()) {
-				player.sendMessage("Only operators can use wand commands");
-				return;
-			}
-			
 			if (args.length == 0) {
 				player.sendMessage("Wands v" + Main.version + " by 'pyzn'. Use /wands help to get a list of commands");
+				
+				// Return so later commands aren't executed
+				return;
 			}
 			
 			if (args.length == 1 && args[0].equals("help")) {
@@ -40,6 +37,14 @@ public class CommandHandler {
 			}
 			
 			if (args.length == 2 && args[0].equals("give")) {		
+				
+				if (!player.hasPermission("wands.give")
+						&& !player.isOp()) {
+					player.sendMessage("You do not seem to have the right permissions to perform this command");
+					
+					// Return so later commands aren't executed
+					return;
+				}
 				
 				// Loop through all possible 
 				for (Wand wand : Main.wandVariations) {

@@ -1,3 +1,10 @@
+# Version 1.3
+
+- Fixed coloring of pumpkin wand
+- Fixed bug that caused rocket wand not to work in some situations
+- Added permission ```wands.give```. Now only players that have this permission or are operators can recieve wands using commands
+- Added ```/wands help``` command that will show a list of all commands
+
 # Version 1.2
 
 - Fixed bug that caused ice wand to not work in caves
