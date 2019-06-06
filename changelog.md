@@ -2,6 +2,8 @@
 
 - Fixed coloring of pumpkin wand
 - Fixed bug that caused rocket wand not to work in some situations
+- Added slime wand
+- Added config file allowing the user control over some wand spawn settings
 - Added permission ```wands.give```. Now only players that have this permission or are operators can recieve wands using commands
 - Added ```/wands help``` command that will show a list of all commands
 
