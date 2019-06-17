@@ -67,6 +67,7 @@ public class WoolWand extends Wand {
 							
 							// Check if block can be placed at locationy
 							if (blockLocation.getBlock().getType().toString().contains("AIR")
+									&& !blockLocation.getBlock().getType().toString().contains("STAIR")
 									&& blockLocation.distance(playerLocation) <= range) {
 								
 								Material glassColor = glassColors[rdm.nextInt(glassColors.length)];
