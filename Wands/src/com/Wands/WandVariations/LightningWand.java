@@ -14,8 +14,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -39,7 +39,7 @@ public class LightningWand extends Wand {
 		Location targetLocation = lineOfSightBlocks.get(lineOfSightBlocks.size() - 1).getLocation();
 		
 		// Use the target location but player rotation
-		Location lightningLocation = LocationHelper.offsetLocation(targetLocation, new Vector(0.5f, 1, 0.5f));
+		Location lightningLocation = LocationHelper.getInstance().offsetLocation(targetLocation, new Vector(0.5f, 1, 0.5f));
 		
 		// Play some sound effect to let the player know there's a thunder going down
 		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WITCH_AMBIENT, 0.5f, 1);

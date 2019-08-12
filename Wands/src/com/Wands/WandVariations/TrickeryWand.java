@@ -9,8 +9,8 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -45,12 +45,12 @@ public class TrickeryWand extends Wand {
 					
 					// Play some particles where the player was at
 					ParticleEmitter.getInstance().emitParticles(playerLocation.getWorld(),
-							LocationHelper.offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
+							LocationHelper.getInstance().offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
 							Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 					
 					// Play some particles where the player went to
 					ParticleEmitter.getInstance().emitParticles(playerLocation.getWorld(),
-							LocationHelper.offsetLocation(playerLocation, new Vector(0, 1, 0)),
+							LocationHelper.getInstance().offsetLocation(playerLocation, new Vector(0, 1, 0)),
 							Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 					
 					// Teleport the player back to his original position

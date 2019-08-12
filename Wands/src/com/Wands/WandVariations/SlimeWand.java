@@ -21,8 +21,8 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -153,12 +153,12 @@ public class SlimeWand extends Wand {
 					
 					ParticleEmitter.getInstance().emitParticles(projectile.getWorld(), projectile.getLocation(), Particle.CRIT_MAGIC, 1, 0.01, new Vector(0, 0, 0));
 					
-					Location projectileLocation = LocationHelper.offsetLocation(projectile.getLocation(), new Vector(0, 0, 0));
+					Location projectileLocation = LocationHelper.getInstance().offsetLocation(projectile.getLocation(), new Vector(0, 0, 0));
 					
 					/*
 					 * X Axis bouncing
 					 */
-					if (LocationHelper.offsetLocation(projectileLocation, new Vector(1, 0, 0)).getBlock().getType().isSolid()
+					if (LocationHelper.getInstance().offsetLocation(projectileLocation, new Vector(1, 0, 0)).getBlock().getType().isSolid()
 							&& projectile.getVelocity().getX() > 0) {
 						projectile.setVelocity(new Vector(
 								-1,
@@ -169,7 +169,7 @@ public class SlimeWand extends Wand {
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
-					if (LocationHelper.offsetLocation(projectileLocation, new Vector(-1, 0, 0)).getBlock().getType().isSolid()
+					if (LocationHelper.getInstance().offsetLocation(projectileLocation, new Vector(-1, 0, 0)).getBlock().getType().isSolid()
 							&& projectile.getVelocity().getX() < 0) {
 						projectile.setVelocity(new Vector(
 								1,
@@ -183,7 +183,7 @@ public class SlimeWand extends Wand {
 					/*
 					 * Z Axis bouncing
 					 */
-					if (LocationHelper.offsetLocation(projectileLocation, new Vector(0, 0, 1)).getBlock().getType().isSolid()
+					if (LocationHelper.getInstance().offsetLocation(projectileLocation, new Vector(0, 0, 1)).getBlock().getType().isSolid()
 							&& projectile.getVelocity().getZ() > 0) {
 						projectile.setVelocity(new Vector(
 								projectile.getVelocity().getX(),
@@ -194,7 +194,7 @@ public class SlimeWand extends Wand {
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
-					if (LocationHelper.offsetLocation(projectileLocation, new Vector(0, 0, -1)).getBlock().getType().isSolid()
+					if (LocationHelper.getInstance().offsetLocation(projectileLocation, new Vector(0, 0, -1)).getBlock().getType().isSolid()
 							&& projectile.getVelocity().getZ() < 0) {
 						projectile.setVelocity(new Vector(
 								projectile.getVelocity().getX(),
@@ -208,7 +208,7 @@ public class SlimeWand extends Wand {
 					/*
 					 * Y Axis bouncing
 					 */
-					if (LocationHelper.offsetLocation(projectileLocation, new Vector(0, 1, 0)).getBlock().getType().isSolid()
+					if (LocationHelper.getInstance().offsetLocation(projectileLocation, new Vector(0, 1, 0)).getBlock().getType().isSolid()
 							&& projectile.getVelocity().getY() > 0) {
 						projectile.setVelocity(new Vector(
 								projectile.getVelocity().getX(),
@@ -219,7 +219,7 @@ public class SlimeWand extends Wand {
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
-					if (LocationHelper.offsetLocation(projectileLocation, new Vector(0, -1, 0)).getBlock().getType().isSolid()
+					if (LocationHelper.getInstance().offsetLocation(projectileLocation, new Vector(0, -1, 0)).getBlock().getType().isSolid()
 							&& projectile.getVelocity().getY() < 0) {
 						projectile.setVelocity(new Vector(
 								projectile.getVelocity().getX(),

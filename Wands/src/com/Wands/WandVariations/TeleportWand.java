@@ -13,8 +13,8 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -48,11 +48,11 @@ public class TeleportWand extends Wand {
 		
 		// Play some particles where the player was
 		ParticleEmitter.getInstance().emitParticles(teleportLocation.getWorld(),
-				LocationHelper.offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
+				LocationHelper.getInstance().offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
 				Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 		// Play some particles where the player went to
 		ParticleEmitter.getInstance().emitParticles(teleportLocation.getWorld(),
-				LocationHelper.offsetLocation(teleportLocation, new Vector(0, 1, 0)),
+				LocationHelper.getInstance().offsetLocation(teleportLocation, new Vector(0, 1, 0)),
 				Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 		
 		// Teleport player to the block thats farthest away from the player

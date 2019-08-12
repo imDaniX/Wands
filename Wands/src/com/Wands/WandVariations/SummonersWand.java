@@ -15,8 +15,8 @@ import org.bukkit.entity.Wolf;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -50,7 +50,7 @@ public class SummonersWand extends Wand {
 		for (int i = 0; i < wolfCount; i++) {
 			
 			// Generate a random location for the wolf
-			Location spawnLocation = LocationHelper.getRandomNearbyPosition(player.getLocation(), this.range);
+			Location spawnLocation = LocationHelper.getInstance().getRandomNearbyPosition(player.getLocation(), this.range);
 			
 			// Spawn a wolf and safe it as a variable
 			Wolf wolf = (Wolf) player.getWorld().spawnEntity(spawnLocation, EntityType.WOLF);

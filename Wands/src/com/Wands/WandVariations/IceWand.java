@@ -14,8 +14,8 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -43,10 +43,10 @@ public class IceWand extends Wand {
 				for (int z = -this.range; z < this.range; z++) {
 
 					// Get block position
-					Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x, y, z));
+					Location blockLocation = LocationHelper.getInstance().offsetLocation(playerLocation, new Vector(x, y, z));
 
 					// Get position under block
-					Location blockGroundLocation = LocationHelper.offsetLocation(blockLocation, new Vector(0, -1, 0));
+					Location blockGroundLocation = LocationHelper.getInstance().offsetLocation(blockLocation, new Vector(0, -1, 0));
 
 					// Check if block is of type air above a block of type ground
 					// aswell as if the block is in range

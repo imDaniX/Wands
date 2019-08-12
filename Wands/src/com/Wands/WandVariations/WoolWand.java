@@ -9,8 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.LocationHelper;
 import com.PluginBase.ParticleEmitter;
-import com.Wands.LocationHelper;
 import com.Wands.Main;
 import com.Wands.Wand;
 
@@ -64,7 +64,7 @@ public class WoolWand extends Wand {
 						for (int z = -WoolWand.this.range; z < WoolWand.this.range; z++) {
 							
 							// Get location near player
-							Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x + 0.5f, -1, z + 0.5f));
+							Location blockLocation = LocationHelper.getInstance().offsetLocation(playerLocation, new Vector(x + 0.5f, -1, z + 0.5f));
 							
 							// Check if block can be placed at location
 							if (blockLocation.getBlock().getType().toString().contains("AIR")
