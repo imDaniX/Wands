@@ -8,6 +8,8 @@ import org.bukkit.util.Vector;
 public class LocationHelper {
 
 	public static Location offsetLocation(Location startLocation, Vector offset) {
+		
+		// Add the offset vector to the start location
 		return new Location(
 				startLocation.getWorld(),
 				startLocation.getX() + offset.getX(),
@@ -15,7 +17,12 @@ public class LocationHelper {
 				startLocation.getZ() + offset.getZ());
 	}
 	
+	/*
+	 * This function will move a location on the Y axis to find the nearest spot
+	 * where a player can stand
+	 */
 	public static Location validateLocation(Location location) {
+		
 		// Create a new location to return later
 		Location validatedLocation = location;
 		
@@ -38,6 +45,7 @@ public class LocationHelper {
 	}
 	
 	public static Location getRandomNearbyPosition(Location startLocation, int range) {
+		
 		// Create a random number generator
 		Random rdm = new Random();
 		

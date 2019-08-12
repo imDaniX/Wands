@@ -40,7 +40,7 @@ public class Main extends JavaPlugin {
 		config.addDefault("Wands.Drop.Chance", 10);
 		
 		// Common
-		config.addDefault("Wands.Craftsman.Cooldown", 0);	// CRAFTING = CRAFTSMAN
+		/*config.addDefault("Wands.Craftsman.Cooldown", 0);	// CRAFTING = CRAFTSMAN
 		
 		// Uncommon
 		config.addDefault("Wands.Fireball.Cooldown", 5);
@@ -59,7 +59,7 @@ public class Main extends JavaPlugin {
 		// Ancient
 		config.addDefault("Wands.Summoners.Cooldown", 60);
 		config.addDefault("Wands.Lightning.Cooldown", 60);
-		config.addDefault("Wands.Pumpkin.Cooldown", 60);
+		config.addDefault("Wands.Pumpkin.Cooldown", 60);*/
 		
 		// Save all the settings to the config
 		config.options().copyDefaults(true);

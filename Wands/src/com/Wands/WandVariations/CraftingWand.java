@@ -14,6 +14,7 @@ public class CraftingWand extends Wand {
 
 	@Override
 	public void runAction(Player player) {
+		
 		// Play a sound
 		player.getWorld().playSound(player.getLocation(), Sound.BLOCK_DISPENSER_DISPENSE, 1, 1);
 		

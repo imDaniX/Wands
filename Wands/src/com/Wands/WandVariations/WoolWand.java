@@ -65,11 +65,12 @@ public class WoolWand extends Wand {
 							// Get location near player
 							Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x + 0.5f, -1, z + 0.5f));
 							
-							// Check if block can be placed at locationy
+							// Check if block can be placed at location
 							if (blockLocation.getBlock().getType().toString().contains("AIR")
 									&& !blockLocation.getBlock().getType().toString().contains("STAIR")
 									&& blockLocation.distance(playerLocation) <= range) {
 								
+								// Pick a random color from the list of available colors
 								Material glassColor = glassColors[rdm.nextInt(glassColors.length)];
 								
 								// Place block
