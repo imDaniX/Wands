@@ -1,3 +1,8 @@
+# Version 1.4
+
+- Added "PluginBase" dependency. The plugin now uses that API for a bunch of stuff, it will still function the same but some parts of the plugins code have been moved to the new API and are much better written now
+- Fixed bug that caused wands not to have a cooldown
+
 # Version 1.3
 
 - Added slime wand
