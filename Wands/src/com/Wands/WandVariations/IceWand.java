@@ -14,9 +14,9 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class IceWand extends Wand {
@@ -59,7 +59,7 @@ public class IceWand extends Wand {
 						blockLocation.getBlock().setType(Material.SNOW);
 
 						// Place snow effect over block
-						ParticleEmitter.emitParticlesContinuously(blockLocation, Particle.CLOUD, 1, 0.05, new Vector(1, 1, 1), this.main, rdm.nextInt(100), 100, 200);
+						ParticleEmitter.getInstance().emitParticlesContinuously(blockLocation, Particle.CLOUD, 1, 0.05, new Vector(1, 1, 1), this.main, rdm.nextInt(100), 100, 200);
 						
 						// Schedule task to turn snow blocks back to normal blocks
 						BukkitRunnable runnable = new BukkitRunnable() {

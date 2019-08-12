@@ -15,9 +15,9 @@ import org.bukkit.entity.Wolf;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class SummonersWand extends Wand {
@@ -56,10 +56,10 @@ public class SummonersWand extends Wand {
 			Wolf wolf = (Wolf) player.getWorld().spawnEntity(spawnLocation, EntityType.WOLF);
 			
 			// Spawn cloud particles where the wolf spawns
-			ParticleEmitter.emitParticles(spawnLocation, Particle.CLOUD, 30, 0.01, new Vector(0.5, 0.5, 0.5));
+			ParticleEmitter.getInstance().emitParticles(player.getWorld(), spawnLocation, Particle.CLOUD, 30, 0.01, new Vector(0.5, 0.5, 0.5));
 			
 			// Play particles at the position of the wolf
-			ParticleEmitter.emitParticlesContinuously(wolf, Particle.VILLAGER_ANGRY, 1, 1, new Vector(0, 0, 0), this.main, 0, 10, this.duration * 20);
+			ParticleEmitter.getInstance().emitParticlesContinuously(wolf, Particle.VILLAGER_ANGRY, 1, 1, new Vector(0, 0, 0), this.main, 0, 10, this.duration * 20);
 			
 			// Add wolf to list
 			wolfs.add(wolf);

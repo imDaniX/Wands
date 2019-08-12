@@ -13,8 +13,8 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class RocketWand extends Wand {
@@ -53,7 +53,7 @@ public class RocketWand extends Wand {
 			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1, 1);
 			
 			// Play some particles under player
-			ParticleEmitter.emitParticlesContinuously(player, Particle.FLAME, 1, 0.01, new Vector(0, 0, 0), this.main, 0, 1, 70);
+			ParticleEmitter.getInstance().emitParticlesContinuously(player, Particle.FLAME, 1, 0.01, new Vector(0, 0, 0), this.main, 0, 1, 70);
 		}
 	}
 

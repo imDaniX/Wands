@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class WoolWand extends Wand {
@@ -78,7 +78,7 @@ public class WoolWand extends Wand {
 								blockLocation.getBlock().setType(glassColor);
 								
 								// Play particle effect at block position
-								ParticleEmitter.emitParticles(blockLocation, Particle.HEART, 1, 0.1, new Vector(0.5, 0.5, 0.5));
+								ParticleEmitter.getInstance().emitParticles(blockLocation.getWorld(), blockLocation, Particle.HEART, 1, 0.1, new Vector(0.5, 0.5, 0.5));
 								
 								// Create runnable that will remove all the wool blocks
 								BukkitRunnable runnable = new BukkitRunnable() {
@@ -92,7 +92,7 @@ public class WoolWand extends Wand {
 											blockLocation.getBlock().setType(Material.AIR);
 											
 											// Play particle effect at block position
-											ParticleEmitter.emitParticles(blockLocation, Particle.CLOUD, 1, 0.01, new Vector(0.5, 0.5, 0.5));
+											ParticleEmitter.getInstance().emitParticles(blockLocation.getWorld(), blockLocation, Particle.CLOUD, 1, 0.01, new Vector(0.5, 0.5, 0.5));
 											
 											// Cancel this runnable
 											this.cancel();

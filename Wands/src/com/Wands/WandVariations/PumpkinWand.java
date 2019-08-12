@@ -17,8 +17,8 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class PumpkinWand extends Wand {
@@ -59,9 +59,9 @@ public class PumpkinWand extends Wand {
 			// Make the armorstand ride the bat
 			bat.addPassenger(armorStand);
 
-			ParticleEmitter.emitParticlesContinuously(bat, Particle.FLAME, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
-			ParticleEmitter.emitParticlesContinuously(bat, Particle.CLOUD, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
-			ParticleEmitter.emitParticlesContinuously(bat, Particle.SQUID_INK, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
+			ParticleEmitter.getInstance().emitParticlesContinuously(bat, Particle.FLAME, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
+			ParticleEmitter.getInstance().emitParticlesContinuously(bat, Particle.CLOUD, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
+			ParticleEmitter.getInstance().emitParticlesContinuously(bat, Particle.SQUID_INK, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
 			
 			// This runnable will make sure that the bats will stay around the player
 			// it will also remove the bats if the time has run out
@@ -95,7 +95,7 @@ public class PumpkinWand extends Wand {
 										currentVelocity.getZ() + rdm.nextFloat() * PumpkinWand.this.strength - (PumpkinWand.this.strength / 2));
 
 								// Play some particles
-								ParticleEmitter.emitParticles(entity.getLocation(), Particle.CRIT_MAGIC, 5, 0.1, new Vector(0.5, 0.5, 0.5));
+								ParticleEmitter.getInstance().emitParticles(entity.getWorld(), entity.getLocation(), Particle.CRIT_MAGIC, 5, 0.1, new Vector(0.5, 0.5, 0.5));
 								
 								// Apply the random velocity
 								entity.setVelocity(velocity);

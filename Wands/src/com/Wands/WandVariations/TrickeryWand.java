@@ -9,9 +9,9 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class TrickeryWand extends Wand {
@@ -44,12 +44,12 @@ public class TrickeryWand extends Wand {
 				if (player.isSneaking()) {
 					
 					// Play some particles where the player was at
-					ParticleEmitter.emitParticles(
+					ParticleEmitter.getInstance().emitParticles(playerLocation.getWorld(),
 							LocationHelper.offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
 							Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 					
 					// Play some particles where the player went to
-					ParticleEmitter.emitParticles(
+					ParticleEmitter.getInstance().emitParticles(playerLocation.getWorld(),
 							LocationHelper.offsetLocation(playerLocation, new Vector(0, 1, 0)),
 							Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 					

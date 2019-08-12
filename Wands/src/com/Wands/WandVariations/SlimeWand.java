@@ -21,9 +21,9 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class SlimeWand extends Wand {
@@ -71,7 +71,7 @@ public class SlimeWand extends Wand {
 			projectile.setVelocity(velocity.multiply(0.25f));
 			
 			// Emit particles at the slime position
-			ParticleEmitter.emitParticlesContinuously(projectile, Particle.SLIME, 2, 0.1, new Vector(0.5, 0.5, 0.5), this.main, 0, 2, 20 * this.duration);
+			ParticleEmitter.getInstance().emitParticlesContinuously(projectile, Particle.SLIME, 2, 0.1, new Vector(0.5, 0.5, 0.5), this.main, 0, 2, 20 * this.duration);
 			
 			// Play initial sound effect
 			projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
@@ -151,7 +151,7 @@ public class SlimeWand extends Wand {
 						}
 					}
 					
-					ParticleEmitter.emitParticles(projectile.getLocation(), Particle.CRIT_MAGIC, 1, 0.01, new Vector(0, 0, 0));
+					ParticleEmitter.getInstance().emitParticles(projectile.getWorld(), projectile.getLocation(), Particle.CRIT_MAGIC, 1, 0.01, new Vector(0, 0, 0));
 					
 					Location projectileLocation = LocationHelper.offsetLocation(projectile.getLocation(), new Vector(0, 0, 0));
 					

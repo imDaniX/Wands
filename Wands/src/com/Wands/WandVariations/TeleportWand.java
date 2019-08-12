@@ -13,9 +13,9 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class TeleportWand extends Wand {
@@ -47,11 +47,11 @@ public class TeleportWand extends Wand {
 				player.getLocation().getPitch());
 		
 		// Play some particles where the player was
-		ParticleEmitter.emitParticles(
+		ParticleEmitter.getInstance().emitParticles(teleportLocation.getWorld(),
 				LocationHelper.offsetLocation(player.getLocation(), new Vector(0, 1, 0)),
 				Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 		// Play some particles where the player went to
-		ParticleEmitter.emitParticles(
+		ParticleEmitter.getInstance().emitParticles(teleportLocation.getWorld(),
 				LocationHelper.offsetLocation(teleportLocation, new Vector(0, 1, 0)),
 				Particle.DRAGON_BREATH, 100, 0.01, new Vector(0.25, 0.5, 0.25));
 		

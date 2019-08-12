@@ -14,9 +14,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
+import com.PluginBase.ParticleEmitter;
 import com.Wands.LocationHelper;
 import com.Wands.Main;
-import com.Wands.ParticleEmitter;
 import com.Wands.Wand;
 
 public class LightningWand extends Wand {
@@ -60,7 +60,7 @@ public class LightningWand extends Wand {
 		runnable.runTaskLater(this.main, 50);
 		
 		// Play some particle effect to let players now its coming
-		ParticleEmitter.emitParticles(lightningLocation, Particle.PORTAL, 500, 1, new Vector(0, 0, 0));
+		ParticleEmitter.getInstance().emitParticles(lightningLocation.getWorld(), lightningLocation, Particle.PORTAL, 500, 1, new Vector(0, 0, 0));
 	}
 
 }
