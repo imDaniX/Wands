@@ -1,5 +1,6 @@
-# Version 1.4
+# Version 1.3.1
 
+The next update (v1.4) will contain some new wands aswell as a bunch of code improvements as soon as I implement all of them into the new API
 - Added "PluginBase" dependency. The plugin now uses that API for a bunch of stuff, it will still function the same but some parts of the plugins code have been moved to the new API and are much better written now
 - Fixed bug that caused wands not to have a cooldown
 
