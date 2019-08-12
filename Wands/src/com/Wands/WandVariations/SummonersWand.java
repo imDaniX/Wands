@@ -44,13 +44,13 @@ public class SummonersWand extends Wand {
 		List<Wolf> wolfs = new ArrayList<>();
 		
 		// Determine how many wolfs should spawn
-		int wolfCount = rdm.nextInt(maximumWolfCount - minimumWolfCount + 1) + minimumWolfCount;
+		int wolfCount = rdm.nextInt(this.maximumWolfCount - this.minimumWolfCount + 1) + this.minimumWolfCount;
 		
 		// Spawn the wolfs
 		for (int i = 0; i < wolfCount; i++) {
 			
 			// Generate a random location for the wolf
-			Location spawnLocation = LocationHelper.getRandomNearbyPosition(player.getLocation(), range);
+			Location spawnLocation = LocationHelper.getRandomNearbyPosition(player.getLocation(), this.range);
 			
 			// Spawn a wolf and safe it as a variable
 			Wolf wolf = (Wolf) player.getWorld().spawnEntity(spawnLocation, EntityType.WOLF);
@@ -59,7 +59,7 @@ public class SummonersWand extends Wand {
 			ParticleEmitter.emitParticles(spawnLocation, Particle.CLOUD, 30, 0.01, new Vector(0.5, 0.5, 0.5));
 			
 			// Play particles at the position of the wolf
-			ParticleEmitter.emitParticlesContinuously(wolf, Particle.VILLAGER_ANGRY, 1, 1, new Vector(0, 0, 0), main, 0, 10, duration * 20);
+			ParticleEmitter.emitParticlesContinuously(wolf, Particle.VILLAGER_ANGRY, 1, 1, new Vector(0, 0, 0), this.main, 0, 10, this.duration * 20);
 			
 			// Add wolf to list
 			wolfs.add(wolf);
@@ -82,7 +82,7 @@ public class SummonersWand extends Wand {
 							|| wolf.getTarget().isDead())) {
 
 						// Get a list of entities near wolf
-						List<Entity> nearbyEntities = wolf.getNearbyEntities(wolfRange, wolfRange, wolfRange);
+						List<Entity> nearbyEntities = wolf.getNearbyEntities(SummonersWand.this.wolfRange, SummonersWand.this.wolfRange, SummonersWand.this.wolfRange);
 
 						// Only try to find a target if entities are around
 						if (nearbyEntities.size() >= 1) {
@@ -112,7 +112,7 @@ public class SummonersWand extends Wand {
 							if (possibleTargets.size() >= 1) {
 								
 								// Select a target from all possible targets
-								LivingEntity target = (LivingEntity) possibleTargets.get(rdm.nextInt(possibleTargets.size()));
+								LivingEntity target = possibleTargets.get(rdm.nextInt(possibleTargets.size()));
 								
 								// Make wolf attack the target
 								wolf.setTarget(target);
@@ -122,17 +122,17 @@ public class SummonersWand extends Wand {
 				}
 				
 				// Keep track of how many times the wolfs target was updated
-				counter++;
+				this.counter++;
 				
 				// Check if effect is over
-				if (counter >= duration) {
+				if (this.counter >= SummonersWand.this.duration) {
 					
 					// Cancel this runnable
 					this.cancel();
 				}
 			}
 		};
-		runnable.runTaskTimer(main, 0, 20);
+		runnable.runTaskTimer(this.main, 0, 20);
 		
 		// This runnable will remove wolfs after a given duration
 		BukkitRunnable runnable1 = new BukkitRunnable() {
@@ -154,7 +154,7 @@ public class SummonersWand extends Wand {
 				this.cancel();
 			}
 		};
-		runnable1.runTaskLater(main, 20 * duration);
+		runnable1.runTaskLater(this.main, 20 * this.duration);
 	}
 
 }

@@ -33,7 +33,7 @@ public class LightningWand extends Wand {
 		Set<Material> ignoredBlocks = new HashSet<>(Arrays.asList(Material.AIR, Material.CAVE_AIR));
 					
 		// Get blocks in line of sight of player
-		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, lightningMaximumRange);
+		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, this.lightningMaximumRange);
 		
 		// Get target block (last block in line of sight)
 		Location targetLocation = lineOfSightBlocks.get(lineOfSightBlocks.size() - 1).getLocation();
@@ -57,7 +57,7 @@ public class LightningWand extends Wand {
 				player.getWorld().strikeLightning(lightningLocation);
 			}
 		};
-		runnable.runTaskLater(main, 50);
+		runnable.runTaskLater(this.main, 50);
 		
 		// Play some particle effect to let players now its coming
 		ParticleEmitter.emitParticles(lightningLocation, Particle.PORTAL, 500, 1, new Vector(0, 0, 0));

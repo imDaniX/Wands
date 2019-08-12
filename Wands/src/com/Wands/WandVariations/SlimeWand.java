@@ -71,7 +71,7 @@ public class SlimeWand extends Wand {
 			projectile.setVelocity(velocity.multiply(0.25f));
 			
 			// Emit particles at the slime position
-			ParticleEmitter.emitParticlesContinuously(projectile, Particle.SLIME, 2, 0.1, new Vector(0.5, 0.5, 0.5), main, 0, 2, 20 * duration);
+			ParticleEmitter.emitParticlesContinuously(projectile, Particle.SLIME, 2, 0.1, new Vector(0.5, 0.5, 0.5), this.main, 0, 2, 20 * this.duration);
 			
 			// Play initial sound effect
 			projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
@@ -88,11 +88,12 @@ public class SlimeWand extends Wand {
 				// Keep track of wether or not the projectile has bounced
 				boolean bouncedOnce = false;
 				
+				@SuppressWarnings("hiding")
 				@Override
 				public void run() {
 
 					// Note that the runnable was run
-					c += 2;
+					this.c += 2;
 					
 					// Get nearby entities
 					for (Entity entity : projectile.getNearbyEntities(1, 1, 1)) {
@@ -120,7 +121,7 @@ public class SlimeWand extends Wand {
 					// The bounce strength
 					double bounce = 0.5;
 					
-					if (bouncedOnce) {
+					if (this.bouncedOnce) {
 						if (projectile.getVelocity().getX() > 0) {
 							projectile.setVelocity(new Vector(
 									bounce,
@@ -164,7 +165,7 @@ public class SlimeWand extends Wand {
 								projectile.getVelocity().getY(),
 								projectile.getVelocity().getZ()));
 						
-						bouncedOnce = true;
+						this.bouncedOnce = true;
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
@@ -175,7 +176,7 @@ public class SlimeWand extends Wand {
 								projectile.getVelocity().getY(),
 								projectile.getVelocity().getZ()));
 						
-						bouncedOnce = true;
+						this.bouncedOnce = true;
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
@@ -189,7 +190,7 @@ public class SlimeWand extends Wand {
 								projectile.getVelocity().getY(),
 								-1));
 						
-						bouncedOnce = true;
+						this.bouncedOnce = true;
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
@@ -200,7 +201,7 @@ public class SlimeWand extends Wand {
 								projectile.getVelocity().getY(),
 								1));
 						
-						bouncedOnce = true;
+						this.bouncedOnce = true;
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
@@ -214,7 +215,7 @@ public class SlimeWand extends Wand {
 								-1,
 								projectile.getVelocity().getZ()));
 						
-						bouncedOnce = true;
+						this.bouncedOnce = true;
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
@@ -225,12 +226,12 @@ public class SlimeWand extends Wand {
 								1,
 								projectile.getVelocity().getZ()));
 						
-						bouncedOnce = true;
+						this.bouncedOnce = true;
 						projectile.getWorld().playSound(projectile.getLocation(), Sound.ENTITY_SLIME_JUMP, 1, 1);
 					}
 					
 					// If the runnable has run the amount of times we need it to run
-					if (c >= 20 * duration) {
+					if (this.c >= 20 * SlimeWand.this.duration) {
 						
 						// If projectile is still alive
 						if (projectile.isValid()
@@ -245,7 +246,7 @@ public class SlimeWand extends Wand {
 					}
 				}
 			};
-			runnable.runTaskTimer(main, 0, 2);
+			runnable.runTaskTimer(this.main, 0, 2);
 		}
 	}
 	

@@ -42,24 +42,24 @@ public class EarthWand extends Wand {
 			public void run() {
 
 				// Play some sound effect for every row of blocks being launched
-				player.getWorld().playSound(playerLocation, Sound.ENTITY_ARROW_SHOOT, 1, 1);
+				player.getWorld().playSound(this.playerLocation, Sound.ENTITY_ARROW_SHOOT, 1, 1);
 				
 				// Safe all the blocks that need to be launched into a list
-				List<Location> blocksToLaunch = new ArrayList<Location>();
+				List<Location> blocksToLaunch = new ArrayList<>();
 
-				for (int x = -earthquakeRange; x < earthquakeRange; x++) {
-					for (int y = -earthquakeRange; y < earthquakeRange; y++) {
-						for (int z = -earthquakeRange; z < earthquakeRange; z++) {
+				for (int x = -this.earthquakeRange; x < this.earthquakeRange; x++) {
+					for (int y = -this.earthquakeRange; y < this.earthquakeRange; y++) {
+						for (int z = -this.earthquakeRange; z < this.earthquakeRange; z++) {
 
 							// Get block position
-							Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x, y, z));
+							Location blockLocation = LocationHelper.offsetLocation(this.playerLocation, new Vector(x, y, z));
 							
 							// Get position under block
 							Location blockCeilingLocation = LocationHelper.offsetLocation(blockLocation, new Vector(0, 1, 0));
 							
 							// Check if block is in range and above the block there is air
-							if (blockLocation.distance(playerLocation) <= earthquakeRange + 0.5f
-									&& blockLocation.distance(playerLocation) >= earthquakeRange - 1
+							if (blockLocation.distance(this.playerLocation) <= this.earthquakeRange + 0.5f
+									&& blockLocation.distance(this.playerLocation) >= this.earthquakeRange - 1
 									&& !blockCeilingLocation.getBlock().getType().isSolid()) {
 								blocksToLaunch.add(blockLocation);
 							}
@@ -101,19 +101,19 @@ public class EarthWand extends Wand {
 				blocksToLaunch.clear();
 
 				// Check if earthquake still needs to go
-				if (earthquakeRange <= 6) {
+				if (this.earthquakeRange <= 6) {
 
 					// Increase range of earthquake for next go
-					earthquakeRange++;
+					this.earthquakeRange++;
 				}
 				// Cancel earthquake if its still needs to go
 				else {
-					earthquakeRange = 0;
+					this.earthquakeRange = 0;
 					this.cancel();
 				}
 			}
 		};
-		runnable.runTaskTimer(main, 0, 2);
+		runnable.runTaskTimer(this.main, 0, 2);
 	}
 
 }

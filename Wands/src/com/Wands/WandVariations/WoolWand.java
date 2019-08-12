@@ -49,6 +49,7 @@ public class WoolWand extends Wand {
 			// Keep track of how many times runnable was run
 			double counter = 0;
 			
+			@SuppressWarnings({ "hiding", "synthetic-access" })
 			@Override
 			public void run() {
 				
@@ -59,8 +60,8 @@ public class WoolWand extends Wand {
 				if (!player.isSneaking()) {
 					
 					// Loop through nearby blocks
-					for (int x = (int) -range; x < range; x++) {
-						for (int z = (int) -range; z < range; z++) {
+					for (int x = -WoolWand.this.range; x < WoolWand.this.range; x++) {
+						for (int z = -WoolWand.this.range; z < WoolWand.this.range; z++) {
 							
 							// Get location near player
 							Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x + 0.5f, -1, z + 0.5f));
@@ -68,10 +69,10 @@ public class WoolWand extends Wand {
 							// Check if block can be placed at location
 							if (blockLocation.getBlock().getType().toString().contains("AIR")
 									&& !blockLocation.getBlock().getType().toString().contains("STAIR")
-									&& blockLocation.distance(playerLocation) <= range) {
+									&& blockLocation.distance(playerLocation) <= WoolWand.this.range) {
 								
 								// Pick a random color from the list of available colors
-								Material glassColor = glassColors[rdm.nextInt(glassColors.length)];
+								Material glassColor = WoolWand.this.glassColors[rdm.nextInt(WoolWand.this.glassColors.length)];
 								
 								// Place block
 								blockLocation.getBlock().setType(glassColor);
@@ -98,17 +99,17 @@ public class WoolWand extends Wand {
 										}
 									}
 								};
-								runnable.runTaskTimer(main, 60, 20);
+								runnable.runTaskTimer(WoolWand.this.main, 60, 20);
 							}
 						}
 					}
 				}
 				
 				// Add the time between runs to timer count
-				counter += period;
+				this.counter += WoolWand.this.period;
 				
 				// If counter has run for the needed amount of time
-				if (counter >= duration) {
+				if (this.counter >= WoolWand.this.duration) {
 					
 					// Cancel this runnable
 					this.cancel();
@@ -116,7 +117,7 @@ public class WoolWand extends Wand {
 			}
 			
 		};
-		runnable.runTaskTimer(main, 0, (long) (20 * period));
+		runnable.runTaskTimer(this.main, 0, (long) (20 * this.period));
 	}
 
 }

@@ -56,7 +56,7 @@ public class FireballWand extends Wand {
 			player.getWorld().playSound(fireballLocation, Sound.ITEM_FIRECHARGE_USE, 1, 1);
 			
 			// Play particle effects that follow the flame
-			ParticleEmitter.emitParticlesContinuously(fireball, Particle.FLAME, 5, 0.05, new Vector(0.5, 0.5, 0.5),  main, 0, 1, 200);
+			ParticleEmitter.emitParticlesContinuously(fireball, Particle.FLAME, 5, 0.05, new Vector(0.5, 0.5, 0.5),  this.main, 0, 1, 200);
 		}
 	}
 	

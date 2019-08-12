@@ -25,6 +25,7 @@ public abstract class Wand implements Listener {
 	protected List<String> playersOnCooldown = new ArrayList<>();
 	
 	public Wand(Main main, String name, String rarity, int cooldown) {
+		
 		// Register events as listener
 		main.getServer().getPluginManager().registerEvents(this, main);
 		
@@ -36,6 +37,7 @@ public abstract class Wand implements Listener {
 	}
 	
 	public ItemStack createWandItem() {
+		
 		// Create stick
 		ItemStack wandItem = new ItemStack(Material.STICK, 1);
 		
@@ -43,15 +45,15 @@ public abstract class Wand implements Listener {
 		ItemMeta wandMeta = wandItem.getItemMeta();
 		
 		// Set stick name based on input
-		wandMeta.setDisplayName(name);
+		wandMeta.setDisplayName(this.name);
 		
 		// Add stick enchantment
 		wandMeta.addEnchant(Enchantment.KNOCKBACK, 1, true);
 		
 		// Set stick lore
-		List<String> lore = new ArrayList<String>();
-		lore.add(ChatColor.GRAY + "Left click to use this " + rarity + ChatColor.GRAY + " wand");
-		lore.add(ChatColor.GRAY + "This wand has a cooldown of " + ChatColor.GREEN + cooldown + ChatColor.GRAY + " seconds");
+		List<String> lore = new ArrayList<>();
+		lore.add(ChatColor.GRAY + "Left click to use this " + this.rarity + ChatColor.GRAY + " wand");
+		lore.add(ChatColor.GRAY + "This wand has a cooldown of " + ChatColor.GREEN + this.cooldown + ChatColor.GRAY + " seconds");
 		wandMeta.setLore(lore);
 		wandItem.setItemMeta(wandMeta);
 		
@@ -61,6 +63,7 @@ public abstract class Wand implements Listener {
 	
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event) {
+		
 		// Check if player has left clicked the air
 		if (event.getAction() == Action.LEFT_CLICK_AIR) {
 			
@@ -76,10 +79,10 @@ public abstract class Wand implements Listener {
 					&& item.getItemMeta().getDisplayName() != null) {
 				
 				// Check if player is holding the correct wand
-				if (item.getItemMeta().getDisplayName().equals(name)) {
+				if (item.getItemMeta().getDisplayName().equals(this.name)) {
 					
 					// Don't execute any action if the player is on cooldown
-					if (playersOnCooldown.contains(player.getName())) {
+					if (this.playersOnCooldown.contains(player.getName())) {
 						
 						// Play a sound to let the player know theres still a cooldown
 						player.getWorld().playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1, 1);
@@ -92,17 +95,17 @@ public abstract class Wand implements Listener {
 					runAction(player);
 
 					// Add player to cooldown list
-					playersOnCooldown.add(player.getName());
+					this.playersOnCooldown.add(player.getName());
 					
 					// This runnable will remove the player from cooldown list after a given time
 					BukkitRunnable runnable = new BukkitRunnable() {	
 						@Override
 						public void run() {
 							// Remove player from cooldown list
-							playersOnCooldown.remove(player.getName());
+							Wand.this.playersOnCooldown.remove(player.getName());
 						}
 					};
-					runnable.runTaskLater(main, 20 * cooldown);
+					runnable.runTaskLater(this.main, 20 * this.cooldown);
 				}
 			}
 		}

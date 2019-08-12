@@ -18,6 +18,8 @@ public class Main extends JavaPlugin {
 	public static List<Wand> wandVariations = new ArrayList<>();
 	public static FileConfiguration config;
 	
+	@SuppressWarnings("unused")
+	@Override
 	public void onEnable() {
 		
 		// Load the config containing plugin settings
@@ -91,6 +93,7 @@ public class Main extends JavaPlugin {
 		wandVariations.add(new PumpkinWand(this, 	ChatColor.LIGHT_PURPLE + "Pumpkin Wand",	ChatColor.LIGHT_PURPLE + "ancient",		config.getInt("Wands.Pumpkin.Cooldown")));
 	}
 	
+	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// Send command information to command handler
 		CommandHandler.handleCommand(sender, cmd, label, args);

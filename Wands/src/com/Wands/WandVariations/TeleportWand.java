@@ -32,7 +32,7 @@ public class TeleportWand extends Wand {
 		Set<Material> ignoredBlocks = new HashSet<>(Arrays.asList(Material.AIR, Material.CAVE_AIR));
 					
 		// Get blocks in line of sight of player
-		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, teleportMaximumRange);
+		List<Block> lineOfSightBlocks = player.getLineOfSight(ignoredBlocks, this.teleportMaximumRange);
 		
 		// Get target block (last block in line of sight)
 		Location targetLocation = lineOfSightBlocks.get(lineOfSightBlocks.size() - 1).getLocation();

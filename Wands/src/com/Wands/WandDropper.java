@@ -21,7 +21,7 @@ public class WandDropper implements Listener {
 		this.main = main;
 		
 		// Read the drop chance from the config
-		dropChance = Main.config.getInt("Wands.Drop.Chance");
+		this.dropChance = Main.config.getInt("Wands.Drop.Chance");
 	}
 	
 	@EventHandler
@@ -62,7 +62,7 @@ public class WandDropper implements Listener {
 			int chance = rdm.nextInt(101);
 			
 			// There is a certain % chance of a wand dropping after a witch died
-			if (chance <= dropChance) {
+			if (chance <= this.dropChance) {
 				
 				// Randomly select a wand
 				int randomWandIndex = rdm.nextInt(Main.wandVariations.size());

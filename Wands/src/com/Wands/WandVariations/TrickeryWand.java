@@ -31,7 +31,7 @@ public class TrickeryWand extends Wand {
 		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WITCH_AMBIENT, 1, 1);
 		
 		// Add speed effect to player
-		player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20 * duration, 1));
+		player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 20 * this.duration, 1));
 		
 		BukkitRunnable runnable = new BukkitRunnable() {
 			
@@ -64,10 +64,10 @@ public class TrickeryWand extends Wand {
 				}
 				
 				// Add period to counter
-				counter += 2;
+				this.counter += 2;
 				
 				// If the time has run out
-				if (counter >= 20 * duration) {
+				if (this.counter >= 20 * TrickeryWand.this.duration) {
 					
 					// Play a sound to let the player know the time frame is over
 					player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WITCH_HURT, 1, 1);
@@ -77,7 +77,7 @@ public class TrickeryWand extends Wand {
 				}
 			}
 		};
-		runnable.runTaskTimer(main, 0, 2);
+		runnable.runTaskTimer(this.main, 0, 2);
 	}
 
 }

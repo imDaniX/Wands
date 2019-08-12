@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class CommandHandler {
 	
+	@SuppressWarnings("unused")
 	public static void handleCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// Check if command sender is player
 		if (sender instanceof Player == false) {

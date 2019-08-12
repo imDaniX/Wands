@@ -59,9 +59,9 @@ public class PumpkinWand extends Wand {
 			// Make the armorstand ride the bat
 			bat.addPassenger(armorStand);
 
-			ParticleEmitter.emitParticlesContinuously(bat, Particle.FLAME, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), main, 0, 5, 20 * (int) duration);
-			ParticleEmitter.emitParticlesContinuously(bat, Particle.CLOUD, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), main, 0, 5, 20 * (int) duration);
-			ParticleEmitter.emitParticlesContinuously(bat, Particle.SQUID_INK, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), main, 0, 5, 20 * (int) duration);
+			ParticleEmitter.emitParticlesContinuously(bat, Particle.FLAME, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
+			ParticleEmitter.emitParticlesContinuously(bat, Particle.CLOUD, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
+			ParticleEmitter.emitParticlesContinuously(bat, Particle.SQUID_INK, 1, 0.01, new Vector(0.5f, 0.5f, 0.5f), this.main, 0, 5, 20 * (int) this.duration);
 			
 			// This runnable will make sure that the bats will stay around the player
 			// it will also remove the bats if the time has run out
@@ -70,14 +70,15 @@ public class PumpkinWand extends Wand {
 				// Keep track of how many times the runnable was run
 				int counter = 0;
 
+				@SuppressWarnings("hiding")
 				@Override
 				public void run() {
 
 					// Loop through all entities near player
-					for (Entity entity : bat.getNearbyEntities(range, range, range)) {
+					for (Entity entity : bat.getNearbyEntities(PumpkinWand.this.range, PumpkinWand.this.range, PumpkinWand.this.range)) {
 						
 						// Entities only have a 10% chance of getting effected
-						if (rdm.nextInt(101) <= chance) {
+						if (rdm.nextInt(101) <= PumpkinWand.this.chance) {
 							
 							// Make sure the entity isn't the player or a bat or armor stand
 							if (entity != player
@@ -89,9 +90,9 @@ public class PumpkinWand extends Wand {
 
 								// Add a random vector to that velocity
 								Vector velocity = new Vector(
-										currentVelocity.getX() + rdm.nextFloat() * strength - (strength / 2),
-										currentVelocity.getY() + rdm.nextFloat() * strength - (strength / 2),
-										currentVelocity.getZ() + rdm.nextFloat() * strength - (strength / 2));
+										currentVelocity.getX() + rdm.nextFloat() * PumpkinWand.this.strength - (PumpkinWand.this.strength / 2),
+										currentVelocity.getY() + rdm.nextFloat() * PumpkinWand.this.strength - (PumpkinWand.this.strength / 2),
+										currentVelocity.getZ() + rdm.nextFloat() * PumpkinWand.this.strength - (PumpkinWand.this.strength / 2));
 
 								// Play some particles
 								ParticleEmitter.emitParticles(entity.getLocation(), Particle.CRIT_MAGIC, 5, 0.1, new Vector(0.5, 0.5, 0.5));
@@ -113,7 +114,7 @@ public class PumpkinWand extends Wand {
 						}
 					}
 					
-					if (bat.getLocation().distance(player.getLocation()) >= range) {
+					if (bat.getLocation().distance(player.getLocation()) >= PumpkinWand.this.range) {
 
 						// Get player and bat location
 						Location playerLocation = player.getLocation();
@@ -130,10 +131,10 @@ public class PumpkinWand extends Wand {
 					}
 
 					// Add period to counter
-					counter += 10;
+					this.counter += 10;
 
 					// If the time has run out
-					if (counter >= 20 * duration) {
+					if (this.counter >= 20 * PumpkinWand.this.duration) {
 
 						// Remove the bat and armorstand
 						armorStand.remove();
@@ -144,7 +145,7 @@ public class PumpkinWand extends Wand {
 					}
 				}
 			};
-			runnable.runTaskTimer(main, 0, 10);
+			runnable.runTaskTimer(this.main, 0, 10);
 		}
 	}
 

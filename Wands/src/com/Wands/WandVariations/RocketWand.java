@@ -53,7 +53,7 @@ public class RocketWand extends Wand {
 			player.getWorld().playSound(player.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1, 1);
 			
 			// Play some particles under player
-			ParticleEmitter.emitParticlesContinuously(player, Particle.FLAME, 1, 0.01, new Vector(0, 0, 0), main, 0, 1, 70);
+			ParticleEmitter.emitParticlesContinuously(player, Particle.FLAME, 1, 0.01, new Vector(0, 0, 0), this.main, 0, 1, 70);
 		}
 	}
 

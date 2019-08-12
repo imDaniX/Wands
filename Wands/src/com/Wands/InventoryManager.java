@@ -27,7 +27,7 @@ public class InventoryManager {
 		wandMeta.addEnchant(Enchantment.KNOCKBACK, 1, true);
 		
 		// Set stick lore
-		List<String> lore = new ArrayList<String>();
+		List<String> lore = new ArrayList<>();
 		lore.add(ChatColor.GRAY + "Left click to use wand");
 		wandMeta.setLore(lore);
 		wandItem.setItemMeta(wandMeta);
@@ -51,7 +51,7 @@ public class InventoryManager {
 		wandMeta.addEnchant(Enchantment.KNOCKBACK, 1, true);
 		
 		// Set stick lore
-		List<String> lore = new ArrayList<String>();
+		List<String> lore = new ArrayList<>();
 		lore.add(ChatColor.GRAY + "Left click to use wand");
 		lore.add(ChatColor.GRAY + "Uses Gunpower as ammunition");
 		wandMeta.setLore(lore);

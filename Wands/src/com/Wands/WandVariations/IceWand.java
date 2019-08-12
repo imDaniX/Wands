@@ -38,9 +38,9 @@ public class IceWand extends Wand {
 		Random rdm = new Random();
 
 		// Loop through blocks near player
-		for (int x = -range; x < range; x++) {
-			for (int y = -range; y < range; y++) {
-				for (int z = -range; z < range; z++) {
+		for (int x = -this.range; x < this.range; x++) {
+			for (int y = -this.range; y < this.range; y++) {
+				for (int z = -this.range; z < this.range; z++) {
 
 					// Get block position
 					Location blockLocation = LocationHelper.offsetLocation(playerLocation, new Vector(x, y, z));
@@ -53,13 +53,13 @@ public class IceWand extends Wand {
 					if (blockLocation.getBlock().getType().toString().contains("AIR")
 							&& !blockLocation.getBlock().getType().toString().contains("STAIR")
 							&& blockGroundLocation.getBlock().getType().isSolid()
-							&& blockLocation.distance(playerLocation) <= range) {
+							&& blockLocation.distance(playerLocation) <= this.range) {
 
 						// Place snow at that block position
 						blockLocation.getBlock().setType(Material.SNOW);
 
 						// Place snow effect over block
-						ParticleEmitter.emitParticlesContinuously(blockLocation, Particle.CLOUD, 1, 0.05, new Vector(1, 1, 1), main, rdm.nextInt(100), 100, 200);
+						ParticleEmitter.emitParticlesContinuously(blockLocation, Particle.CLOUD, 1, 0.05, new Vector(1, 1, 1), this.main, rdm.nextInt(100), 100, 200);
 						
 						// Schedule task to turn snow blocks back to normal blocks
 						BukkitRunnable runnable = new BukkitRunnable() {
@@ -70,14 +70,14 @@ public class IceWand extends Wand {
 								}
 							}
 						};
-						runnable.runTaskLater(main, rdm.nextInt(40) + 20 * duration);
+						runnable.runTaskLater(this.main, rdm.nextInt(40) + 20 * this.duration);
 					}
 				}
 			}
 		}
 
 		// Loop through all entities near player
-		for (Entity entity : player.getNearbyEntities(range, range, range)) {
+		for (Entity entity : player.getNearbyEntities(this.range, this.range, this.range)) {
 
 			// Check if the entity is not the player and also alive
 			if (entity != player
@@ -87,7 +87,7 @@ public class IceWand extends Wand {
 				LivingEntity livingEntity = (LivingEntity) entity;
 
 				// Prepare potion effect
-				PotionEffect slowness = new PotionEffect(PotionEffectType.SLOW, 20 * duration, 10);
+				PotionEffect slowness = new PotionEffect(PotionEffectType.SLOW, 20 * this.duration, 10);
 
 				// Add potion effects to entity
 				livingEntity.addPotionEffect(slowness);
