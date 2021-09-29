@@ -1,9 +1,0 @@
-name: Wands
-main: com.Wands.Main
-version: 1.3
-api-version: 1.13
-depend: [PluginBase]
-commands:
-   wands:
-      description: Wand command
-      usage: /<command>
